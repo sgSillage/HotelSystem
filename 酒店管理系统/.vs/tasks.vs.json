@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "任务-AppServeForm.Designer",
+      "appliesTo": "酒店管理系统/AppServeForm.Designer.cs",
+      "type": "launch"
+    }
+  ]
+}
