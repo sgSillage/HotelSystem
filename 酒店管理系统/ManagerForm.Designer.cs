@@ -211,7 +211,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::酒店管理系统.Properties.Resources.timg;
             this.ClientSize = new System.Drawing.Size(1061, 656);
             this.Controls.Add(this.ssrManager);
             this.Controls.Add(this.tsrManager);

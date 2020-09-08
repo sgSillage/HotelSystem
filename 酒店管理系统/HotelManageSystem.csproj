@@ -334,7 +334,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\timg.jpg" />
+    <Content Include="Resources\list_add_user.png" />
+    <Content Include="Resources\Real_Estate_2-12-512.png" />
+    <Content Include="Resources\shutdown.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
