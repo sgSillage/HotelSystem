@@ -26,17 +26,38 @@ namespace HotelmanageSystem
                !string.IsNullOrWhiteSpace(mtxEmployeephone.Text.Replace("-",""))&& !string.IsNullOrEmpty(txtEmployeesalary.Text)&& !string.IsNullOrWhiteSpace(mtxEmployeetime.Text.Replace("-",""))&&
                 !string.IsNullOrEmpty(txtEmployeeposition.Text))//信息完整
             {
-                //MessageBox.Show(string.Format("{0},{1},{2},{3},{4},{5},{6},{7}", txtEmployeeID.Text, txtEmployeename.Text,
-                //cmbEmployeesex.SelectedItem.ToString(), mtxEmployeestatus.Text.Replace("-",""),
-                //mtxEmployeephone.Text.Replace("-",""), txtEmployeesalary.Text, mtxEmployeetime.Text, txtEmployeeposition.Text));
                 if (dBHandler.isExistEmployee(txtEmployeeID.Text) || dBHandler.isExistEmployeeStatus(txtEmployeeID.Text))
                 {
                     MessageBox.Show("员工编号或者身份证号已经存在，添加失败", "添加失败", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    dBHandler.AddEmployee(txtEmployeeID.Text, txtEmployeename.Text, cmbEmployeesex.SelectedItem.ToString(), mtxEmployeestatus.Text.Replace("-", ""), mtxEmployeephone.Text.Replace("-", ""), Convert.ToInt32(txtEmployeesalary.Text), mtxEmployeetime.Text, txtEmployeeposition.Text);
-                    MessageBox.Show("添加成功！");
+                    bool isRight = true;
+                    if (txtEmployeeID.Text.Length != 6)//员工编号不满足要求
+                    {
+                        isRight = false;
+                        MessageBox.Show("员工编号的长度必须为6！", "出错提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    if (mtxEmployeestatus.Text.Replace(" ", "").Length != 20)//身份证号不满足要求
+                    {
+                        isRight = false;
+                        MessageBox.Show("身份证号的长度不足18！", "出错提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    if (mtxEmployeephone.Text.Replace(" ", "").Length != 13)//电话号码的长度不满足要求
+                    {
+                        isRight = false;
+                        MessageBox.Show("电话号码的长度不足11！", "出错提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    if (mtxEmployeetime.Text.Replace(" ", "").Length != 10)
+                    {
+                        isRight = false;
+                        MessageBox.Show("入职时间格式为xxxx-xx-xx！", "出错提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    if (isRight)
+                    {
+                        dBHandler.AddEmployee(txtEmployeeID.Text, txtEmployeename.Text, cmbEmployeesex.SelectedItem.ToString(), mtxEmployeestatus.Text.Replace("-", ""), mtxEmployeephone.Text.Replace("-", ""), Convert.ToInt32(txtEmployeesalary.Text), mtxEmployeetime.Text, txtEmployeeposition.Text);
+                        MessageBox.Show("添加成功！");
+                    }
                 }
             }
             else

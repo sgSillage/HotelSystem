@@ -23,13 +23,8 @@ namespace HotelmanageSystem
 
         private void EmployeeListForm_Load(object sender, EventArgs e)
         {
-            //List<Employee> employees = new List<Employee>();
             List<Employee> employees =dBHandler.GetEmployees();//获取员工列表
-            int tag = 0;
-            //employees.Add(new Employee("001", "潘1", "男", "530302200006012416", "18687437921", 12000, "2020-06-06", "管理员"));
-            //employees.Add(new Employee("002", "潘2", "男", "530302200006012417", "18687437922", 12000, "2020-06-07", "管理员"));
-            //employees.Add(new Employee("003", "潘3", "男", "530302200006012418", "18687437923", 12000, "2020-06-08", "前台"));
-            //employees.Add(new Employee("004", "潘4", "男", "530302200006012419", "18687437924", 12000, "2020-06-09", "清洁工"));
+            int tag = 0;   
             foreach(Employee employee in employees)//遍历，添加到表格中
             {
                 ListViewItem listViewItem = new ListViewItem(employee.Number);
@@ -175,6 +170,7 @@ namespace HotelmanageSystem
             {
                 if (!string.IsNullOrWhiteSpace(mtxEmployeeinfo.Text.Replace("-","")))//不为空
                 {
+                    int len = mtxEmployeeinfo.Text.Replace(" ", "").Length;//长度
                     if (attribute == "员工编号")
                     {
                         bool isExistID = false;
@@ -192,9 +188,16 @@ namespace HotelmanageSystem
                         }
                         else
                         {
-                            dBHandler.ModifyEmployeeID(lvwEmployee.SelectedItems[0].SubItems[0].Text,mtxEmployeeinfo.Text);
-                            lvwEmployee.SelectedItems[0].SubItems[0].Text = mtxEmployeeinfo.Text;
-                            MessageBox.Show("成功修改员工编号!");
+                            if (len != 6)
+                            {
+                                MessageBox.Show("员工编号的长度必须为6！", "出错提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            else
+                            {
+                                dBHandler.ModifyEmployeeID(lvwEmployee.SelectedItems[0].SubItems[0].Text, mtxEmployeeinfo.Text);
+                                lvwEmployee.SelectedItems[0].SubItems[0].Text = mtxEmployeeinfo.Text;
+                                MessageBox.Show("成功修改员工编号!");
+                            }
                         }
                     }
                     else if (attribute == "员工姓名")
@@ -219,9 +222,16 @@ namespace HotelmanageSystem
                         }
                         if(!isExistStatus)
                         {
-                            lvwEmployee.SelectedItems[0].SubItems[3].Text = mtxEmployeeinfo.Text.Replace("-", "");
-                            dBHandler.ModifyEmployeestatus(lvwEmployee.SelectedItems[0].SubItems[0].Text,mtxEmployeeinfo.Text.Replace("-",""));
-                            MessageBox.Show("成功修改身份证号!");
+                            if (len != 20)
+                            {
+                                MessageBox.Show("身份证号的长度不足18！", "出错提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            else
+                            {
+                                lvwEmployee.SelectedItems[0].SubItems[3].Text = mtxEmployeeinfo.Text.Replace("-", "");
+                                dBHandler.ModifyEmployeestatus(lvwEmployee.SelectedItems[0].SubItems[0].Text, mtxEmployeeinfo.Text.Replace("-", ""));
+                                MessageBox.Show("成功修改身份证号!");
+                            }
                         }
                         else
                         {
@@ -241,9 +251,16 @@ namespace HotelmanageSystem
                         }
                         if (!isExistPhone)
                         {
-                            lvwEmployee.SelectedItems[0].SubItems[4].Text = mtxEmployeeinfo.Text.Replace("-", "");
-                            dBHandler.ModifyEmployeephone(lvwEmployee.SelectedItems[0].SubItems[0].Text,mtxEmployeeinfo.Text.Replace("-",""));
-                            MessageBox.Show("成功修改电话号码!");
+                            if (len != 13)
+                            {
+                                MessageBox.Show("电话号码的长度不足11！", "出错提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            else
+                            {
+                                lvwEmployee.SelectedItems[0].SubItems[4].Text = mtxEmployeeinfo.Text.Replace("-", "");
+                                dBHandler.ModifyEmployeephone(lvwEmployee.SelectedItems[0].SubItems[0].Text, mtxEmployeeinfo.Text.Replace("-", ""));
+                                MessageBox.Show("成功修改电话号码!");
+                            }
                         }
                         else
                         {
@@ -263,9 +280,16 @@ namespace HotelmanageSystem
                     {
                         if (lvwEmployee.SelectedItems[0].SubItems[6].Text != mtxEmployeeinfo.Text)
                         {
-                            lvwEmployee.SelectedItems[0].SubItems[6].Text = mtxEmployeeinfo.Text+" 0:00:00";
-                            dBHandler.ModifyEmployeetime(lvwEmployee.SelectedItems[0].SubItems[0].Text,mtxEmployeeinfo.Text);
-                            MessageBox.Show("成功修改入职时间!");
+                            if (len != 10)
+                            {
+                                MessageBox.Show("入职时间格式为xxxx-xx-xx！", "出错提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            else
+                            {
+                                lvwEmployee.SelectedItems[0].SubItems[6].Text = mtxEmployeeinfo.Text + " 0:00:00";
+                                dBHandler.ModifyEmployeetime(lvwEmployee.SelectedItems[0].SubItems[0].Text, mtxEmployeeinfo.Text);
+                                MessageBox.Show("成功修改入职时间!");
+                            }
                         }
                     }
                     else if (attribute == "员工职位")

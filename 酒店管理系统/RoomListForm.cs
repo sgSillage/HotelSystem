@@ -23,13 +23,8 @@ namespace HotelmanageSystem
         
         private void RoomListForm_Load(object sender, EventArgs e)
         {
-            //List<Room> rooms= rooms = new List<Room>();
             int tag = 0;
             List<Room> rooms = dBHandler.GetRooms();//获取房间列表
-            //rooms.Add(new Room("001", "单人间", 1, 100));
-            //rooms.Add(new Room("002", "双人间", 1, 120));
-            //rooms.Add(new Room("003", "大床房", 1, 110));
-            //rooms.Add(new Room("004", "双人间", 0, 120));
             foreach(Room room in rooms)
             {
                 ListViewItem listViewItem = new ListViewItem(room.Number);
@@ -137,11 +132,19 @@ namespace HotelmanageSystem
                         {
                             MessageBox.Show("房间号已经存在，修改失败！");
                         }
-                        else{
-                        dBHandler.ModifyRoom_no(lvwRoom.SelectedItems[0].SubItems[0].Text,txtRoominfo.Text);
-                        lvwRoom.SelectedItems[0].SubItems[0].Text = txtRoominfo.Text;
-                        MessageBox.Show("成功修改房间号！");
-                        txtRoominfo.Text = "";
+                        else
+                        {
+                            if (txtRoominfo.Text.Length != 4)
+                            {
+                                MessageBox.Show("房间号的长度必须为4！", "出错提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            else
+                            {
+                                dBHandler.ModifyRoom_no(lvwRoom.SelectedItems[0].SubItems[0].Text, txtRoominfo.Text);
+                                lvwRoom.SelectedItems[0].SubItems[0].Text = txtRoominfo.Text;
+                                MessageBox.Show("成功修改房间号！");
+                                txtRoominfo.Text = "";
+                            }
                         }
                     }
                     else if (attribute == "房间类型")//修改房间类型会导致房间价格改变

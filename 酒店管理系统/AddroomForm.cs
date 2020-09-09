@@ -35,8 +35,6 @@ namespace HotelmanageSystem
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(string.Format("{0},{1},{2},{3}",
-            //       txtRoom_no.Text, txtRoomkind.Text, cmbIsnormal.SelectedItem.ToString(), txtRoomprice.Text));
             if (!string.IsNullOrEmpty(txtRoom_no.Text)&& !string.IsNullOrEmpty(txtRoomkind.Text)&&
                 cmbIsnormal.SelectedItem!=null && !string.IsNullOrEmpty(txtRoomprice.Text))//信息完整
             {
@@ -47,8 +45,18 @@ namespace HotelmanageSystem
                
                 else
                 {
-                    dBHandler.AddRoom(txtRoom_no.Text, txtRoomkind.Text, cmbIsnormal.SelectedItem.ToString(),Convert.ToInt32(txtRoomprice.Text));
-                    MessageBox.Show("添加成功！", "成功提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    bool isRight = true;
+                    if (txtRoom_no.Text.Length != 4)//房间号的长度不满足要求
+                    {
+                        isRight = false;
+                        MessageBox.Show("房间号的长度必须为4！", "出错提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+                    if (isRight)//信息满足要求
+                    {
+                        dBHandler.AddRoom(txtRoom_no.Text, txtRoomkind.Text, cmbIsnormal.SelectedItem.ToString(), Convert.ToInt32(txtRoomprice.Text));
+                        MessageBox.Show("添加成功！", "成功提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             else
