@@ -192,9 +192,9 @@ namespace LoginRegisterFrame
             string password = textBoxPassword.Text;
             switch(comboBoxCatagory.Text)
             {
-                case "顾客": category = 1;return;
-                case "前台": category = 2;return;
-                case "管理员":category = 3;return;
+                case "顾客": category = 1;break;
+                case "前台": category = 2;break;
+                case "管理员":category = 3;break;
             }
 
             if(category == 0)
@@ -216,9 +216,9 @@ namespace LoginRegisterFrame
             //1--登陆成功
             switch(dbLogin.LoginSystem(category,id,password))
             {
-                case -1:return;
-                case 0:isID = true;return;
-                case 1:isID = true;isPassword = true;return;
+                case -1:break;
+                case 0:isID = true; break;
+                case 1:isID = true;isPassword = true; break;
             }
 
             if (isID == false)

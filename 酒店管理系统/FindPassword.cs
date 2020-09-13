@@ -72,9 +72,9 @@ namespace LoginRegisterFrame
             //在数据库中查找id和identity并检查是否配对
             switch(dbLogin.FindIdAndIdentity(account,identity))
             {
-                case -1:return;
-                case 0:isID = true;return;
-                case 1:isID = true;isIdentity = true;return;
+                case -1: break;
+                case 0:isID = true; break;
+                case 1:isID = true;isIdentity = true; break;
             }
 
             if(isID==false)
