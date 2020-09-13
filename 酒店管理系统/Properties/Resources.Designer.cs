@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReceptionSection.Properties {
+namespace 酒店管理系统.Properties {
     using System;
     
     
@@ -57,16 +57,6 @@ namespace ReceptionSection.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap timg {
-            get {
-                object obj = ResourceManager.GetObject("timg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
