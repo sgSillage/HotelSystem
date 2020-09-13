@@ -591,6 +591,30 @@ namespace HotelmanageSystem
                 {
                     MessageBox.Show(e.Message);
                 }
+                if (employee_position == "前台")
+                {
+                    sql = "insert into front(staff_id,password,front_phone) values(@staff_id,@password,@front_phone)";
+                    cmd.CommandText = sql;
+                    cmd.Parameters.Add(new MySqlParameter("@staff_id", employee_id));
+                    cmd.Parameters.Add(new MySqlParameter("@password", "123456"));
+                    cmd.Parameters.Add(new MySqlParameter("@front_phone", employee_phone));
+                }
+                else
+                {
+                    sql = "insert into administrator(adm_id,adm_phone,admin_password) values(@staff_id,@adm_phone,@password)";
+                    cmd.CommandText = sql;
+                    cmd.Parameters.Add(new MySqlParameter("@staff_id", employee_id));
+                    cmd.Parameters.Add(new MySqlParameter("@adm_phone", employee_phone));
+                    cmd.Parameters.Add(new MySqlParameter("@password", "123456"));
+                }
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
             }
             conn.Close();
         }
