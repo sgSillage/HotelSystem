@@ -31,10 +31,12 @@ namespace LoginRegisterFrame
         private LinkLabel linkLabel1;
         private LinkLabel linkLabel2;
         private Button buttonRegister;
+        private DBLogin dbLogin;
 
         public MainForm()
         {
             InitializeComponent();
+            dbLogin = new DBLogin();
         }
 
         private void InitializeComponent()
@@ -185,101 +187,38 @@ namespace LoginRegisterFrame
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            /*if(comboBoxCatagory.Text=="")
+            int category = 0;
+            string id = textBoxAccount.Text;
+            string password = textBoxPassword.Text;
+            switch(comboBoxCatagory.Text)
+            {
+                case "顾客": category = 1;return;
+                case "前台": category = 2;return;
+                case "管理员":category = 3;return;
+            }
+
+            if(category == 0)
             {
                 MessageBox.Show("请选择登陆ID的类别", "");
                 return;
             }
-
-            if(textBoxAccount.Text==""||textBoxPassword.Text=="")
+            if(id ==""||password=="")
             {
                 MessageBox.Show("请输入ID或密码！", "");
                 return;
-            }*/
+            }
             bool isID = false;
             bool isPassword = false;
-            //string connString = "server=localhost; database=mydb;uid=root;pwd=nmb15963.";
-            //using (MySqlConnection conn = new MySqlConnection(connString)) 
-            //{
-            //    conn.Open();
-            //    if (comboBoxCatagory.Text == "顾客")//顾客登录
-            //        using (MySqlCommand login = new MySqlCommand("select * from user", conn))
-            //        {
-            //            MySqlDataReader reader = login.ExecuteReader();
-            //            while (reader.Read())
-            //            {
-            //                if (textBoxAccount.Text == reader.GetString("user_id"))
-            //                {
-            //                    isID = true;//找到ID
-            //                    if (textBoxPassword.Text == reader.GetString("user_password"))
-            //                    {
-            //                        isPassword = true;//密码正确
-            //                    }
-            //                    break;
-            //                }
-            //            }
-            //        }
-            //    else if (comboBoxCatagory.Text =="前台")//前台登录
-            //        using (MySqlCommand login = new MySqlCommand("select * from front", conn))
-            //        {
-            //            MySqlDataReader reader = login.ExecuteReader();
-            //            while (reader.Read())
-            //            {
-            //                if (textBoxAccount.Text == reader.GetString("staff_id"))
-            //                {
-            //                    isID = true;//找到ID
-            //                    if (textBoxPassword.Text == reader.GetString("password"))
-            //                    {
-            //                        isPassword = true;//密码正确
-            //                    }
-            //                    break;
-            //                }
-            //            }
-            //        }
-            //    else if (comboBoxCatagory.Text=="管理员")//管理员登录
-            //        using (MySqlCommand login = new MySqlCommand("select * from administrator", conn))
-            //        {
-            //            MySqlDataReader reader = login.ExecuteReader();
-            //            while (reader.Read())
-            //            {
-            //                if (textBoxAccount.Text == reader.GetString("adm_id"))
-            //                {
-            //                    isID = true;//找到ID
-            //                    if (textBoxPassword.Text == reader.GetString("admin_password"))
-            //                    {
-            //                        isPassword = true;//密码正确
-            //                    }
-            //                    break;
-            //                }
-            //            }
-            //        }
-            //    conn.Close();
-            //    {
-            //        ManagerForm managerForm = new ManagerForm();
-            //        this.Hide();
-            //        managerForm.Show();
-            //    }
-            //}
-            if (comboBoxCatagory.Text == "管理员")
+
+            //登录函数调用，并返回int类型数据，其含义如下
+            //-1--找不到该用户ID
+            //0--密码错误
+            //1--登陆成功
+            switch(dbLogin.LoginSystem(category,id,password))
             {
-                ManagerForm managerForm = new ManagerForm();
-                managerForm.Owner = this;
-                this.Hide();
-                managerForm.Show();
-            }
-            else if(comboBoxCatagory.Text == "顾客")
-            {
-                UserForm userForm = new UserForm();
-                userForm.Owner = this;
-                this.Hide();
-                userForm.Show();
-            }
-            else if(comboBoxCatagory.Text == "前台")
-            {
-                qiantai receptionForm = new qiantai();
-                receptionForm.Owner = this;
-                this.Hide();
-                receptionForm.Show();
+                case -1:return;
+                case 0:isID = true;return;
+                case 1:isID = true;isPassword = true;return;
             }
 
             if (isID == false)
@@ -292,7 +231,27 @@ namespace LoginRegisterFrame
             }
             else if (isID && isPassword)
             {
-                MessageBox.Show("登陆成功", "");
+                if (comboBoxCatagory.Text == "管理员")
+                {
+                    ManagerForm managerForm = new ManagerForm();
+                    managerForm.Owner = this;
+                    this.Hide();
+                    managerForm.Show();
+                }
+                else if (comboBoxCatagory.Text == "顾客")
+                {
+                    UserForm userForm = new UserForm();
+                    userForm.Owner = this;
+                    this.Hide();
+                    userForm.Show();
+                }
+                else if (comboBoxCatagory.Text == "前台")
+                {
+                    qiantai receptionForm = new qiantai();
+                    receptionForm.Owner = this;
+                    this.Hide();
+                    receptionForm.Show();
+                }
             }
         }
 

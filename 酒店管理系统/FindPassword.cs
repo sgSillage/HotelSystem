@@ -12,9 +12,11 @@ namespace LoginRegisterFrame
 {
     public partial class FindPassword : Form
     {
+        private DBLogin dbLogin;
         public FindPassword()
         {
             InitializeComponent();
+            dbLogin = new DBLogin();
         }
 
         private void FindPassword_Load(object sender, EventArgs e)
@@ -34,6 +36,8 @@ namespace LoginRegisterFrame
             string identity = textBoxIdentity.Text;
             string Newpassword = textBoxNewPassword.Text;
             string NewPassword_re = textBoxNewPassword_re.Text;
+            bool isID = false;
+            bool isIdentity = false;
 
             if(account == "")
             {
@@ -65,9 +69,26 @@ namespace LoginRegisterFrame
                 MessageBox.Show("密码长度不正确，请重新输入！", "");
                 return;
             }
+            //在数据库中查找id和identity并检查是否配对
+            switch(dbLogin.FindIdAndIdentity(account,identity))
+            {
+                case -1:return;
+                case 0:isID = true;return;
+                case 1:isID = true;isIdentity = true;return;
+            }
 
-
-
+            if(isID==false)
+            {
+                MessageBox.Show("无此用户ID,请重试", "");
+            }
+            else if(isID==true && isIdentity==false)
+            {
+                MessageBox.Show("身份证号码错误，请重试", "");
+            }
+            else if(isID&&isIdentity)
+            {
+                dbLogin.ResetPassword(account, Newpassword);
+            }
         }
     }
 }

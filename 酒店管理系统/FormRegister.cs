@@ -13,9 +13,11 @@ namespace LoginRegisterFrame
 {
     public partial class FormRegister : Form
     {
+        private DBLogin dbLogin;
         public FormRegister()
         {
             InitializeComponent();
+            dbLogin = new DBLogin();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -94,45 +96,15 @@ namespace LoginRegisterFrame
                 return;
             }
 
-            int count = 1;//count of user
+            int count = dbLogin.CountUser();//count of user
             int sex = 0;//sex of user
             if (comboBoxSex.Text == "男")
                 sex = 1;
 
-            string connString = "server=localhost; database=mydb;uid=root;pwd=nmb15963.";
-            using (MySqlConnection conn = new MySqlConnection(connString))//计数user数量以形成user_id
-            {
-                conn.Open();
-                using (MySqlCommand countUser = new MySqlCommand("select count(user_id) from user", conn))
-                {
-                    MySqlDataReader reader = countUser.ExecuteReader();
-                    while (reader.Read())
-                        count++;
-                }
-                conn.Close();
-            }
-
-            using (MySqlConnection conn = new MySqlConnection(connString))
-            {
-                conn.Open();
-                using (MySqlCommand registerIdentity = new MySqlCommand())//将信息插入至identity_card的表中
-                {
-                    string sql = "insert into identity_card values('"+identity+"','"+name+"',"+sex+",'"+phoneNumber+"')";
-                    registerIdentity.Connection = conn;
-                    registerIdentity.CommandText = sql;
-                    registerIdentity.ExecuteNonQuery();
-                }
-
-                using (MySqlCommand registerUser = new MySqlCommand())//将信息插入至user的表中
-                {
-                    string sql = "insert into user values("+count+",'"+identity+"','"+password1+"')";
-                    registerUser.Connection = conn;
-                    registerUser.CommandText = sql;
-                    registerUser.ExecuteNonQuery();
-                }
-                conn.Close();
-            }
-
+            //将注册的用户信息插入两个表中
+            dbLogin.insertUserInformation(name, identity, password1,phoneNumber, sex, count);
+            
+            
         }
     }
 }

@@ -13,9 +13,11 @@ namespace LoginRegisterFrame
 {
     public partial class FindAccount : Form
     {
+        private DBLogin dbLogin;
         public FindAccount()
         {
             InitializeComponent();
+            dbLogin = new DBLogin();
         }
 
         private void FindAccount_Load(object sender, EventArgs e)
@@ -33,25 +35,12 @@ namespace LoginRegisterFrame
         {
             bool isFind = false;
             string account = "";
+            string identity = textBoxIdentity.Text;
 
-            string connString = "server=localhost; database=mydb;uid=root;pwd=nmb15963.";
-            using (MySqlConnection conn = new MySqlConnection(connString))
+            account = dbLogin.GetAccount(identity);
+            if(account!="")
             {
-                conn.Open();
-                using (MySqlCommand FindAccount = new MySqlCommand("select * from user", conn))
-                    {
-                        MySqlDataReader reader = FindAccount.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            if (textBoxIdentity.Text == reader.GetString("user_identity"))
-                            {
-                                isFind = true;//找到账号
-                                account = reader.GetString("user_id");
-                                break;
-                            }
-                        }
-                    }
-                conn.Close();
+                isFind = true;
             }
 
             if (isFind)

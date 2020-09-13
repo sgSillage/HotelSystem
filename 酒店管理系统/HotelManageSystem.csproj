@@ -130,6 +130,7 @@
     <Compile Include="IncomeCostForm.designer.cs">
       <DependentUpon>IncomeCostForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBAccessLogin.cs" />
     <Compile Include="ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
