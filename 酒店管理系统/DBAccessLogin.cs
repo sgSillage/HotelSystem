@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Windows.Forms;
+using ReceptionSection;
 
 namespace LoginRegisterFrame
 {
@@ -21,6 +22,9 @@ namespace LoginRegisterFrame
         //FindPassword
         int FindIdAndIdentity(string id, string identity);//验证用户ID与身份证号码是否匹配
         void ResetPassword(string id, string password);//修改此id的密码
+
+        //CheckInRecordForm
+        List<CheckInRecord> GetCheckInRecords();
     }
 
     class DBLogin : DBAccessLogin
@@ -105,6 +109,33 @@ namespace LoginRegisterFrame
             }
             return account;
         }
+
+        public List<CheckInRecord> GetCheckInRecords()
+        {
+            List<CheckInRecord> checkin_list = new List<CheckInRecord>();
+            MySqlConnection conn = new MySqlConnection(connString);
+            conn.Open();
+            using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
+            {
+                cmd.Connection = conn;
+                string sql = "select* from lodger_check_in natural join identity_card";
+                cmd.CommandText = sql;
+                MySqlDataReader reader = cmd.ExecuteReader();//创建一个执行读命令的对象,但是还没有执行命令
+                while (reader.Read())//按行执行查询，每次循环查询一行
+                {                   
+                    string identity = reader.GetString("identity");
+                    string room_id = reader.GetString("room_id");
+                    string lodger_time = reader.GetString("lodger_time");
+                    string leave_time = reader.GetString("leave_time");
+                    string name = reader.GetString("name");
+                    CheckInRecord checkin = new CheckInRecord(identity, room_id, lodger_time, leave_time, name);
+                    checkin_list.Add(checkin);
+                }
+            }
+            conn.Close();
+            return checkin_list;
+        }
+
         public void insertUserInformation(string name, string identity, string password,string phoneNumber, int sex, int count)
         {
             using (MySqlConnection conn = new MySqlConnection(connString))

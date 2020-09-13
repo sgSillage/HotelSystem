@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace 酒店管理系统.Properties {
+namespace ReceptionSection.Properties {
     using System;
     
     

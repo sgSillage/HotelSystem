@@ -74,6 +74,13 @@
     <Compile Include="ChangeRoomForm.Designer.cs">
       <DependentUpon>ChangeRoomForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckInRecord.cs" />
+    <Compile Include="CheckInRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckInRecordForm.Designer.cs">
+      <DependentUpon>CheckInRecordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeRoomForm.resx">
       <DependentUpon>ChangeRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckInRecordForm.resx">
+      <DependentUpon>CheckInRecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CommentForm.resx">
       <DependentUpon>CommentForm.cs</DependentUpon>
