@@ -211,3 +211,4 @@ C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\ReceptionSecti
 C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\HotelManageSystem.csproj.GenerateResource.cache
 C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\酒店管理系统.exe
 C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\酒店管理系统.pdb
+C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\ReceptionSection.CheckInRecordForm.resources
