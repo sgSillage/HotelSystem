@@ -143,19 +143,29 @@ namespace LoginRegisterFrame
                 conn.Open();
                 using (MySqlCommand registerIdentity = new MySqlCommand())//将信息插入至identity_card的表中
                 {
-                    string sql = "insert into identity_card values('@identity','@name',@sex,'@phoneNumber')";
+                    string sql = "insert into identity_card values(@identity,@name,@sex,@phoneNumber)";
                     registerIdentity.Connection = conn;
                     registerIdentity.CommandText = sql;
+                    registerIdentity.Parameters.AddWithValue("@sex", sex);
+                    registerIdentity.Parameters.AddWithValue("@name", name);
+                    registerIdentity.Parameters.AddWithValue("@identity", identity);
+                    registerIdentity.Parameters.AddWithValue("@phoneNumber", phoneNumber);
                     registerIdentity.ExecuteNonQuery();
                 }
 
                 using (MySqlCommand registerUser = new MySqlCommand())//将信息插入至user的表中
                 {
-                    string sql = "insert into user values(@count,'@identity','@password')";
+                    string sql = "insert into user values(@count,@identity,@password, @balance)";
                     registerUser.Connection = conn;
                     registerUser.CommandText = sql;
+                    registerUser.Parameters.AddWithValue("@count", count);
+                    registerUser.Parameters.AddWithValue("@identity", identity);
+                    registerUser.Parameters.AddWithValue("@password", password);
+                    registerUser.Parameters.AddWithValue("@balance", null);
                     registerUser.ExecuteNonQuery();
                 }
+
+                MessageBox.Show("注册成功，您的账号是：" + count.ToString() + "。请牢记！");
                 conn.Close();
             }
         }
