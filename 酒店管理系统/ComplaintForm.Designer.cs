@@ -47,9 +47,9 @@
             this.colhCom_time});
             this.lvwComplaint.FullRowSelect = true;
             this.lvwComplaint.HideSelection = false;
-            this.lvwComplaint.Location = new System.Drawing.Point(12, 12);
+            this.lvwComplaint.Location = new System.Drawing.Point(22, 49);
             this.lvwComplaint.Name = "lvwComplaint";
-            this.lvwComplaint.Size = new System.Drawing.Size(776, 388);
+            this.lvwComplaint.Size = new System.Drawing.Size(773, 388);
             this.lvwComplaint.TabIndex = 0;
             this.lvwComplaint.UseCompatibleStateImageBehavior = false;
             this.lvwComplaint.View = System.Windows.Forms.View.Details;
@@ -83,14 +83,14 @@
             // tsmiViewdetails
             // 
             this.tsmiViewdetails.Name = "tsmiViewdetails";
-            this.tsmiViewdetails.Size = new System.Drawing.Size(240, 28);
+            this.tsmiViewdetails.Size = new System.Drawing.Size(188, 28);
             this.tsmiViewdetails.Text = "查看投诉详情";
             this.tsmiViewdetails.Click += new System.EventHandler(this.tsmiViewdetails_Click);
             // 
             // tsmiDetelecomplaint
             // 
             this.tsmiDetelecomplaint.Name = "tsmiDetelecomplaint";
-            this.tsmiDetelecomplaint.Size = new System.Drawing.Size(240, 28);
+            this.tsmiDetelecomplaint.Size = new System.Drawing.Size(188, 28);
             this.tsmiDetelecomplaint.Text = "删除投诉";
             this.tsmiDetelecomplaint.Click += new System.EventHandler(this.tsmiDetelecomplaint_Click);
             // 
@@ -98,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(814, 506);
             this.ContextMenuStrip = this.cmsComplaint;
             this.Controls.Add(this.lvwComplaint);
             this.Name = "ComplaintForm";

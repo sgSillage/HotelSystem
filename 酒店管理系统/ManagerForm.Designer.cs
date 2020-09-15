@@ -60,9 +60,9 @@
             this.tsmiEmployee,
             this.tsmiIncost,
             this.tsmiComplaint});
-            this.mnsManager.Location = new System.Drawing.Point(0, 0);
+            this.mnsManager.Location = new System.Drawing.Point(4, 32);
             this.mnsManager.Name = "mnsManager";
-            this.mnsManager.Size = new System.Drawing.Size(1061, 32);
+            this.mnsManager.Size = new System.Drawing.Size(1053, 32);
             this.mnsManager.TabIndex = 1;
             this.mnsManager.Text = "菜单栏";
             // 
@@ -157,9 +157,9 @@
             this.tsbAddroom,
             this.tsbAddemployee,
             this.tsbExit});
-            this.tsrManager.Location = new System.Drawing.Point(0, 32);
+            this.tsrManager.Location = new System.Drawing.Point(4, 64);
             this.tsrManager.Name = "tsrManager";
-            this.tsrManager.Size = new System.Drawing.Size(1061, 31);
+            this.tsrManager.Size = new System.Drawing.Size(1053, 31);
             this.tsrManager.TabIndex = 2;
             this.tsrManager.Text = "工具栏";
             // 
@@ -186,8 +186,8 @@
             this.tsbExit.Image = ((System.Drawing.Image)(resources.GetObject("tsbExit.Image")));
             this.tsbExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbExit.Name = "tsbExit";
-            this.tsbExit.Size = new System.Drawing.Size(74, 28);
-            this.tsbExit.Text = "退出";
+            this.tsbExit.Size = new System.Drawing.Size(110, 28);
+            this.tsbExit.Text = "退出登录";
             this.tsbExit.Click += new System.EventHandler(this.tsbExit_Click);
             // 
             // ssrManager
@@ -195,9 +195,9 @@
             this.ssrManager.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.ssrManager.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslManager});
-            this.ssrManager.Location = new System.Drawing.Point(0, 627);
+            this.ssrManager.Location = new System.Drawing.Point(4, 623);
             this.ssrManager.Name = "ssrManager";
-            this.ssrManager.Size = new System.Drawing.Size(1061, 29);
+            this.ssrManager.Size = new System.Drawing.Size(1053, 29);
             this.ssrManager.TabIndex = 3;
             this.ssrManager.Text = "状态栏";
             // 

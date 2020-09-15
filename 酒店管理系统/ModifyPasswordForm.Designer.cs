@@ -141,22 +141,30 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(246, 368);
+            this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnOK.Image = global::酒店管理系统.Properties.Resources.symbol_check_icon;
+            this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOK.Location = new System.Drawing.Point(246, 359);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 31);
+            this.btnOK.Size = new System.Drawing.Size(79, 40);
             this.btnOK.TabIndex = 10;
             this.btnOK.Text = "确定";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(475, 368);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCancel.Image = global::酒店管理系统.Properties.Resources.delete_icon;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(475, 359);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 30);
+            this.btnCancel.Size = new System.Drawing.Size(80, 40);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "取消";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // ModifyPasswordForm
             // 

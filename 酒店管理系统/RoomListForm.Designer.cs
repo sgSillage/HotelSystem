@@ -57,14 +57,13 @@
             this.colhRoomprice});
             this.lvwRoom.FullRowSelect = true;
             this.lvwRoom.HideSelection = false;
-            this.lvwRoom.Location = new System.Drawing.Point(3, 1);
+            this.lvwRoom.Location = new System.Drawing.Point(13, 47);
             this.lvwRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwRoom.Name = "lvwRoom";
             this.lvwRoom.Size = new System.Drawing.Size(656, 322);
             this.lvwRoom.TabIndex = 0;
             this.lvwRoom.UseCompatibleStateImageBehavior = false;
             this.lvwRoom.View = System.Windows.Forms.View.Details;
-            this.lvwRoom.SelectedIndexChanged += new System.EventHandler(this.lvwRoom_SelectedIndexChanged);
             // 
             // colhRoom_no
             // 
@@ -155,15 +154,17 @@
             // lblModifyRoom
             // 
             this.lblModifyRoom.AutoSize = true;
-            this.lblModifyRoom.Location = new System.Drawing.Point(35, 356);
+            this.lblModifyRoom.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblModifyRoom.Location = new System.Drawing.Point(77, 398);
             this.lblModifyRoom.Name = "lblModifyRoom";
-            this.lblModifyRoom.Size = new System.Drawing.Size(134, 18);
+            this.lblModifyRoom.Size = new System.Drawing.Size(157, 21);
             this.lblModifyRoom.TabIndex = 2;
             this.lblModifyRoom.Text = "修改信息提示：";
             // 
             // txtRoominfo
             // 
-            this.txtRoominfo.Location = new System.Drawing.Point(290, 346);
+            this.txtRoominfo.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtRoominfo.Location = new System.Drawing.Point(305, 391);
             this.txtRoominfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRoominfo.Name = "txtRoominfo";
             this.txtRoominfo.Size = new System.Drawing.Size(100, 28);
@@ -171,20 +172,24 @@
             // 
             // btnModifyroom
             // 
-            this.btnModifyroom.Location = new System.Drawing.Point(237, 404);
+            this.btnModifyroom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnModifyroom.Image = global::酒店管理系统.Properties.Resources.symbol_check_icon;
+            this.btnModifyroom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModifyroom.Location = new System.Drawing.Point(252, 449);
             this.btnModifyroom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModifyroom.Name = "btnModifyroom";
-            this.btnModifyroom.Size = new System.Drawing.Size(75, 32);
+            this.btnModifyroom.Size = new System.Drawing.Size(84, 32);
             this.btnModifyroom.TabIndex = 4;
             this.btnModifyroom.Text = "修改";
-            this.btnModifyroom.UseVisualStyleBackColor = true;
+            this.btnModifyroom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModifyroom.UseVisualStyleBackColor = false;
             this.btnModifyroom.Click += new System.EventHandler(this.btnModifyroom_Click);
             // 
             // RoomListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 450);
+            this.ClientSize = new System.Drawing.Size(691, 522);
             this.ContextMenuStrip = this.cmsModifyroom;
             this.Controls.Add(this.btnModifyroom);
             this.Controls.Add(this.txtRoominfo);

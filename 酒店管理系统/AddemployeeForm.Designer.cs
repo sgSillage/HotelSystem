@@ -51,7 +51,7 @@
             // lblEmployeeID
             // 
             this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Location = new System.Drawing.Point(74, 32);
+            this.lblEmployeeID.Location = new System.Drawing.Point(74, 57);
             this.lblEmployeeID.Name = "lblEmployeeID";
             this.lblEmployeeID.Size = new System.Drawing.Size(89, 18);
             this.lblEmployeeID.TabIndex = 0;
@@ -59,7 +59,7 @@
             // 
             // txtEmployeeID
             // 
-            this.txtEmployeeID.Location = new System.Drawing.Point(214, 22);
+            this.txtEmployeeID.Location = new System.Drawing.Point(214, 47);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(197, 28);
             this.txtEmployeeID.TabIndex = 1;
@@ -67,7 +67,7 @@
             // lblEmployeename
             // 
             this.lblEmployeename.AutoSize = true;
-            this.lblEmployeename.Location = new System.Drawing.Point(74, 82);
+            this.lblEmployeename.Location = new System.Drawing.Point(74, 107);
             this.lblEmployeename.Name = "lblEmployeename";
             this.lblEmployeename.Size = new System.Drawing.Size(89, 18);
             this.lblEmployeename.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             // txtEmployeename
             // 
-            this.txtEmployeename.Location = new System.Drawing.Point(214, 72);
+            this.txtEmployeename.Location = new System.Drawing.Point(214, 97);
             this.txtEmployeename.Name = "txtEmployeename";
             this.txtEmployeename.Size = new System.Drawing.Size(197, 28);
             this.txtEmployeename.TabIndex = 3;
@@ -83,7 +83,7 @@
             // lblEmployeesex
             // 
             this.lblEmployeesex.AutoSize = true;
-            this.lblEmployeesex.Location = new System.Drawing.Point(74, 132);
+            this.lblEmployeesex.Location = new System.Drawing.Point(74, 157);
             this.lblEmployeesex.Name = "lblEmployeesex";
             this.lblEmployeesex.Size = new System.Drawing.Size(89, 18);
             this.lblEmployeesex.TabIndex = 4;
@@ -91,7 +91,8 @@
             // 
             // txtEmployeesalary
             // 
-            this.txtEmployeesalary.Location = new System.Drawing.Point(214, 269);
+            this.txtEmployeesalary.Font = new System.Drawing.Font("宋体", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtEmployeesalary.Location = new System.Drawing.Point(214, 294);
             this.txtEmployeesalary.Name = "txtEmployeesalary";
             this.txtEmployeesalary.Size = new System.Drawing.Size(197, 28);
             this.txtEmployeesalary.TabIndex = 5;
@@ -103,7 +104,7 @@
             this.cmbEmployeesex.Items.AddRange(new object[] {
             "男",
             "女"});
-            this.cmbEmployeesex.Location = new System.Drawing.Point(214, 124);
+            this.cmbEmployeesex.Location = new System.Drawing.Point(214, 149);
             this.cmbEmployeesex.Name = "cmbEmployeesex";
             this.cmbEmployeesex.Size = new System.Drawing.Size(197, 26);
             this.cmbEmployeesex.TabIndex = 6;
@@ -111,7 +112,7 @@
             // lblEmployeesalary
             // 
             this.lblEmployeesalary.AutoSize = true;
-            this.lblEmployeesalary.Location = new System.Drawing.Point(74, 279);
+            this.lblEmployeesalary.Location = new System.Drawing.Point(74, 304);
             this.lblEmployeesalary.Name = "lblEmployeesalary";
             this.lblEmployeesalary.Size = new System.Drawing.Size(134, 18);
             this.lblEmployeesalary.TabIndex = 7;
@@ -120,7 +121,7 @@
             // lblEmployeestatus
             // 
             this.lblEmployeestatus.AutoSize = true;
-            this.lblEmployeestatus.Location = new System.Drawing.Point(74, 178);
+            this.lblEmployeestatus.Location = new System.Drawing.Point(74, 203);
             this.lblEmployeestatus.Name = "lblEmployeestatus";
             this.lblEmployeestatus.Size = new System.Drawing.Size(89, 18);
             this.lblEmployeestatus.TabIndex = 8;
@@ -128,16 +129,18 @@
             // 
             // mtxEmployeestatus
             // 
-            this.mtxEmployeestatus.Location = new System.Drawing.Point(214, 168);
+            this.mtxEmployeestatus.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.mtxEmployeestatus.Location = new System.Drawing.Point(214, 193);
             this.mtxEmployeestatus.Mask = "000000-00000000-000A";
             this.mtxEmployeestatus.Name = "mtxEmployeestatus";
+            this.mtxEmployeestatus.PromptChar = ' ';
             this.mtxEmployeestatus.Size = new System.Drawing.Size(197, 28);
             this.mtxEmployeestatus.TabIndex = 9;
             // 
             // lblEmployeephone
             // 
             this.lblEmployeephone.AutoSize = true;
-            this.lblEmployeephone.Location = new System.Drawing.Point(74, 227);
+            this.lblEmployeephone.Location = new System.Drawing.Point(74, 252);
             this.lblEmployeephone.Name = "lblEmployeephone";
             this.lblEmployeephone.Size = new System.Drawing.Size(89, 18);
             this.lblEmployeephone.TabIndex = 10;
@@ -145,16 +148,18 @@
             // 
             // mtxEmployeephone
             // 
-            this.mtxEmployeephone.Location = new System.Drawing.Point(214, 217);
+            this.mtxEmployeephone.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.mtxEmployeephone.Location = new System.Drawing.Point(214, 242);
             this.mtxEmployeephone.Mask = "000-0000-0000";
             this.mtxEmployeephone.Name = "mtxEmployeephone";
-            this.mtxEmployeephone.Size = new System.Drawing.Size(197, 28);
+            this.mtxEmployeephone.PromptChar = ' ';
+            this.mtxEmployeephone.Size = new System.Drawing.Size(197, 31);
             this.mtxEmployeephone.TabIndex = 11;
             // 
             // lblEmployeetime
             // 
             this.lblEmployeetime.AutoSize = true;
-            this.lblEmployeetime.Location = new System.Drawing.Point(74, 323);
+            this.lblEmployeetime.Location = new System.Drawing.Point(74, 348);
             this.lblEmployeetime.Name = "lblEmployeetime";
             this.lblEmployeetime.Size = new System.Drawing.Size(89, 18);
             this.lblEmployeetime.TabIndex = 12;
@@ -162,17 +167,19 @@
             // 
             // mtxEmployeetime
             // 
-            this.mtxEmployeetime.Location = new System.Drawing.Point(214, 313);
+            this.mtxEmployeetime.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.mtxEmployeetime.Location = new System.Drawing.Point(214, 338);
             this.mtxEmployeetime.Mask = "0000-00-00";
             this.mtxEmployeetime.Name = "mtxEmployeetime";
-            this.mtxEmployeetime.Size = new System.Drawing.Size(197, 28);
+            this.mtxEmployeetime.PromptChar = ' ';
+            this.mtxEmployeetime.Size = new System.Drawing.Size(197, 31);
             this.mtxEmployeetime.TabIndex = 13;
             this.mtxEmployeetime.ValidatingType = typeof(System.DateTime);
             // 
             // lblEmployeeposition
             // 
             this.lblEmployeeposition.AutoSize = true;
-            this.lblEmployeeposition.Location = new System.Drawing.Point(74, 369);
+            this.lblEmployeeposition.Location = new System.Drawing.Point(74, 394);
             this.lblEmployeeposition.Name = "lblEmployeeposition";
             this.lblEmployeeposition.Size = new System.Drawing.Size(89, 18);
             this.lblEmployeeposition.TabIndex = 14;
@@ -180,36 +187,44 @@
             // 
             // txtEmployeeposition
             // 
-            this.txtEmployeeposition.Location = new System.Drawing.Point(214, 358);
+            this.txtEmployeeposition.Location = new System.Drawing.Point(214, 383);
             this.txtEmployeeposition.Name = "txtEmployeeposition";
             this.txtEmployeeposition.Size = new System.Drawing.Size(197, 28);
             this.txtEmployeeposition.TabIndex = 15;
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(214, 409);
+            this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnOK.Image = global::酒店管理系统.Properties.Resources.symbol_check_icon;
+            this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOK.Location = new System.Drawing.Point(214, 464);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 29);
+            this.btnOK.Size = new System.Drawing.Size(85, 43);
             this.btnOK.TabIndex = 16;
             this.btnOK.Text = "确认";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(457, 409);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCancel.Image = global::酒店管理系统.Properties.Resources.delete_icon;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(457, 464);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 28);
+            this.btnCancel.Size = new System.Drawing.Size(84, 42);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "取消";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // AddemployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 522);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtEmployeeposition);

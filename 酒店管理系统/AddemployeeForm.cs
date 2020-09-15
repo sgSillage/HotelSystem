@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CCWin;
 
 namespace HotelmanageSystem
 {
-    public partial class AddemployeeForm : Form
+    public partial class AddemployeeForm : Skin_Mac
     {
         private DBHandler dBHandler;
         public AddemployeeForm()

@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CCWin;
 namespace HotelmanageSystem
 {
-    public partial class IncomeCostForm : Form
+    public partial class IncomeCostForm : Skin_Mac
     {
         public IncomeCostForm()
         {

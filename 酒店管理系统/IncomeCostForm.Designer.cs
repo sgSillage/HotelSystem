@@ -50,7 +50,7 @@
             // 
             // dtpStartime
             // 
-            this.dtpStartime.Location = new System.Drawing.Point(114, 23);
+            this.dtpStartime.Location = new System.Drawing.Point(114, 44);
             this.dtpStartime.Name = "dtpStartime";
             this.dtpStartime.Size = new System.Drawing.Size(200, 28);
             this.dtpStartime.TabIndex = 1;
@@ -58,7 +58,7 @@
             // lblStartime
             // 
             this.lblStartime.AutoSize = true;
-            this.lblStartime.Location = new System.Drawing.Point(3, 33);
+            this.lblStartime.Location = new System.Drawing.Point(3, 54);
             this.lblStartime.Name = "lblStartime";
             this.lblStartime.Size = new System.Drawing.Size(89, 18);
             this.lblStartime.TabIndex = 2;
@@ -67,7 +67,7 @@
             // lblEndtime
             // 
             this.lblEndtime.AutoSize = true;
-            this.lblEndtime.Location = new System.Drawing.Point(6, 89);
+            this.lblEndtime.Location = new System.Drawing.Point(6, 110);
             this.lblEndtime.Name = "lblEndtime";
             this.lblEndtime.Size = new System.Drawing.Size(89, 18);
             this.lblEndtime.TabIndex = 3;
@@ -75,14 +75,14 @@
             // 
             // dtpEndtime
             // 
-            this.dtpEndtime.Location = new System.Drawing.Point(114, 78);
+            this.dtpEndtime.Location = new System.Drawing.Point(114, 99);
             this.dtpEndtime.Name = "dtpEndtime";
             this.dtpEndtime.Size = new System.Drawing.Size(200, 28);
             this.dtpEndtime.TabIndex = 4;
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(452, 61);
+            this.btnQuery.Location = new System.Drawing.Point(452, 82);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(75, 33);
             this.btnQuery.TabIndex = 5;
@@ -99,7 +99,7 @@
             this.colhIncomeDate});
             this.lvwIncome.FullRowSelect = true;
             this.lvwIncome.HideSelection = false;
-            this.lvwIncome.Location = new System.Drawing.Point(9, 184);
+            this.lvwIncome.Location = new System.Drawing.Point(9, 205);
             this.lvwIncome.Name = "lvwIncome";
             this.lvwIncome.Size = new System.Drawing.Size(412, 170);
             this.lvwIncome.TabIndex = 0;
@@ -131,7 +131,8 @@
             // lblIncome
             // 
             this.lblIncome.AutoSize = true;
-            this.lblIncome.Location = new System.Drawing.Point(9, 139);
+            this.lblIncome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblIncome.Location = new System.Drawing.Point(9, 160);
             this.lblIncome.Name = "lblIncome";
             this.lblIncome.Size = new System.Drawing.Size(53, 18);
             this.lblIncome.TabIndex = 6;
@@ -145,7 +146,7 @@
             this.colhGrossCost});
             this.lvwCost.FullRowSelect = true;
             this.lvwCost.HideSelection = false;
-            this.lvwCost.Location = new System.Drawing.Point(452, 184);
+            this.lvwCost.Location = new System.Drawing.Point(452, 205);
             this.lvwCost.Name = "lvwCost";
             this.lvwCost.Size = new System.Drawing.Size(347, 170);
             this.lvwCost.TabIndex = 7;
@@ -171,7 +172,8 @@
             // lblCost
             // 
             this.lblCost.AutoSize = true;
-            this.lblCost.Location = new System.Drawing.Point(452, 139);
+            this.lblCost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblCost.Location = new System.Drawing.Point(452, 160);
             this.lblCost.Name = "lblCost";
             this.lblCost.Size = new System.Drawing.Size(53, 18);
             this.lblCost.TabIndex = 8;
@@ -180,7 +182,8 @@
             // lblGrossProfit
             // 
             this.lblGrossProfit.AutoSize = true;
-            this.lblGrossProfit.Location = new System.Drawing.Point(276, 387);
+            this.lblGrossProfit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.lblGrossProfit.Location = new System.Drawing.Point(276, 408);
             this.lblGrossProfit.Name = "lblGrossProfit";
             this.lblGrossProfit.Size = new System.Drawing.Size(71, 18);
             this.lblGrossProfit.TabIndex = 9;
@@ -188,16 +191,17 @@
             // 
             // txtGrossProfit
             // 
-            this.txtGrossProfit.Location = new System.Drawing.Point(415, 377);
+            this.txtGrossProfit.Font = new System.Drawing.Font("宋体", 10.5F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtGrossProfit.Location = new System.Drawing.Point(415, 398);
             this.txtGrossProfit.Name = "txtGrossProfit";
-            this.txtGrossProfit.Size = new System.Drawing.Size(140, 28);
+            this.txtGrossProfit.Size = new System.Drawing.Size(140, 31);
             this.txtGrossProfit.TabIndex = 10;
             // 
             // IncomeCostForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(822, 470);
             this.Controls.Add(this.txtGrossProfit);
             this.Controls.Add(this.lblGrossProfit);
             this.Controls.Add(this.lblCost);

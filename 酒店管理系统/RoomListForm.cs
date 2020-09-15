@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CCWin;
 
 namespace HotelmanageSystem
 {
-    public partial class RoomListForm : Form
+    public partial class RoomListForm : Skin_Mac
     {
         private string attribute;//记录属性名
         private DBHandler dBHandler;
@@ -223,11 +224,6 @@ namespace HotelmanageSystem
             attribute = "房间价格";
             lblModifyRoom.Text = "请输入修改后的房间价格:";
             txtRoominfo.Text = "";
-        }
-
-        private void lvwRoom_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

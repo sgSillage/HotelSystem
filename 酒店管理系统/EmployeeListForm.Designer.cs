@@ -69,7 +69,7 @@
             this.colhEmployeeposition});
             this.lvwEmployee.FullRowSelect = true;
             this.lvwEmployee.HideSelection = false;
-            this.lvwEmployee.Location = new System.Drawing.Point(0, 0);
+            this.lvwEmployee.Location = new System.Drawing.Point(23, 49);
             this.lvwEmployee.Name = "lvwEmployee";
             this.lvwEmployee.Size = new System.Drawing.Size(822, 299);
             this.lvwEmployee.TabIndex = 0;
@@ -220,35 +220,41 @@
             // lblModifyemployee
             // 
             this.lblModifyemployee.AutoSize = true;
-            this.lblModifyemployee.Location = new System.Drawing.Point(71, 335);
+            this.lblModifyemployee.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblModifyemployee.Location = new System.Drawing.Point(73, 374);
             this.lblModifyemployee.Name = "lblModifyemployee";
-            this.lblModifyemployee.Size = new System.Drawing.Size(125, 18);
+            this.lblModifyemployee.Size = new System.Drawing.Size(147, 21);
             this.lblModifyemployee.TabIndex = 2;
             this.lblModifyemployee.Text = "修改提示信息:";
             // 
             // mtxEmployeeinfo
             // 
-            this.mtxEmployeeinfo.Location = new System.Drawing.Point(285, 325);
+            this.mtxEmployeeinfo.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.mtxEmployeeinfo.Location = new System.Drawing.Point(285, 367);
             this.mtxEmployeeinfo.Name = "mtxEmployeeinfo";
             this.mtxEmployeeinfo.Size = new System.Drawing.Size(242, 28);
             this.mtxEmployeeinfo.TabIndex = 3;
             // 
             // btnOK
             // 
+            this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnOK.ContextMenuStrip = this.cmsModifyemployee;
-            this.btnOK.Location = new System.Drawing.Point(359, 387);
+            this.btnOK.Image = global::酒店管理系统.Properties.Resources.symbol_check_icon;
+            this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOK.Location = new System.Drawing.Point(359, 429);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 36);
+            this.btnOK.Size = new System.Drawing.Size(85, 36);
             this.btnOK.TabIndex = 4;
-            this.btnOK.Text = "确认";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Text = "修改";
+            this.btnOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // EmployeeListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 450);
+            this.ClientSize = new System.Drawing.Size(861, 477);
             this.ContextMenuStrip = this.cmsModifyemployee;
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.mtxEmployeeinfo);

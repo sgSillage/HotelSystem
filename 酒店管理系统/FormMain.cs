@@ -79,7 +79,7 @@ namespace LoginRegisterFrame
             this.labelPassword.AutoSize = true;
             this.labelPassword.Location = new System.Drawing.Point(429, 237);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(71, 15);
+            this.labelPassword.Size = new System.Drawing.Size(80, 18);
             this.labelPassword.TabIndex = 13;
             this.labelPassword.Text = "Password";
             // 
@@ -88,7 +88,7 @@ namespace LoginRegisterFrame
             this.labelAccount.AutoSize = true;
             this.labelAccount.Location = new System.Drawing.Point(429, 183);
             this.labelAccount.Name = "labelAccount";
-            this.labelAccount.Size = new System.Drawing.Size(63, 15);
+            this.labelAccount.Size = new System.Drawing.Size(71, 18);
             this.labelAccount.TabIndex = 12;
             this.labelAccount.Text = "Account";
             // 
@@ -97,7 +97,7 @@ namespace LoginRegisterFrame
             this.labelCategory.AutoSize = true;
             this.labelCategory.Location = new System.Drawing.Point(429, 125);
             this.labelCategory.Name = "labelCategory";
-            this.labelCategory.Size = new System.Drawing.Size(71, 15);
+            this.labelCategory.Size = new System.Drawing.Size(80, 18);
             this.labelCategory.TabIndex = 11;
             this.labelCategory.Text = "Category";
             // 
@@ -106,18 +106,19 @@ namespace LoginRegisterFrame
             this.textBoxPassword.Location = new System.Drawing.Point(550, 234);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(267, 25);
+            this.textBoxPassword.Size = new System.Drawing.Size(267, 28);
             this.textBoxPassword.TabIndex = 10;
             // 
             // textBoxAccount
             // 
             this.textBoxAccount.Location = new System.Drawing.Point(550, 180);
             this.textBoxAccount.Name = "textBoxAccount";
-            this.textBoxAccount.Size = new System.Drawing.Size(267, 25);
+            this.textBoxAccount.Size = new System.Drawing.Size(267, 28);
             this.textBoxAccount.TabIndex = 9;
             // 
             // comboBoxCatagory
             // 
+            this.comboBoxCatagory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCatagory.FormattingEnabled = true;
             this.comboBoxCatagory.Items.AddRange(new object[] {
             "顾客",
@@ -125,7 +126,7 @@ namespace LoginRegisterFrame
             "管理员"});
             this.comboBoxCatagory.Location = new System.Drawing.Point(550, 122);
             this.comboBoxCatagory.Name = "comboBoxCatagory";
-            this.comboBoxCatagory.Size = new System.Drawing.Size(267, 23);
+            this.comboBoxCatagory.Size = new System.Drawing.Size(267, 26);
             this.comboBoxCatagory.TabIndex = 8;
             // 
             // label3
@@ -133,7 +134,7 @@ namespace LoginRegisterFrame
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(666, 269);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 15);
+            this.label3.Size = new System.Drawing.Size(26, 18);
             this.label3.TabIndex = 16;
             this.label3.Text = "或";
             // 
@@ -142,7 +143,7 @@ namespace LoginRegisterFrame
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(578, 269);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(82, 15);
+            this.linkLabel1.Size = new System.Drawing.Size(98, 18);
             this.linkLabel1.TabIndex = 17;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "忘记账号？";
@@ -153,7 +154,7 @@ namespace LoginRegisterFrame
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Location = new System.Drawing.Point(694, 269);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(82, 15);
+            this.linkLabel2.Size = new System.Drawing.Size(98, 18);
             this.linkLabel2.TabIndex = 18;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "忘记密码？";

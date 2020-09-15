@@ -43,7 +43,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(66, 44);
+            this.lblID.Location = new System.Drawing.Point(66, 57);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(89, 18);
             this.lblID.TabIndex = 0;
@@ -52,7 +52,7 @@
             // lblOrder_id
             // 
             this.lblOrder_id.AutoSize = true;
-            this.lblOrder_id.Location = new System.Drawing.Point(66, 118);
+            this.lblOrder_id.Location = new System.Drawing.Point(66, 131);
             this.lblOrder_id.Name = "lblOrder_id";
             this.lblOrder_id.Size = new System.Drawing.Size(89, 18);
             this.lblOrder_id.TabIndex = 1;
@@ -61,7 +61,7 @@
             // lblCom_time
             // 
             this.lblCom_time.AutoSize = true;
-            this.lblCom_time.Location = new System.Drawing.Point(69, 183);
+            this.lblCom_time.Location = new System.Drawing.Point(69, 196);
             this.lblCom_time.Name = "lblCom_time";
             this.lblCom_time.Size = new System.Drawing.Size(89, 18);
             this.lblCom_time.TabIndex = 2;
@@ -70,7 +70,7 @@
             // lblEmp_ids
             // 
             this.lblEmp_ids.AutoSize = true;
-            this.lblEmp_ids.Location = new System.Drawing.Point(69, 235);
+            this.lblEmp_ids.Location = new System.Drawing.Point(69, 248);
             this.lblEmp_ids.Name = "lblEmp_ids";
             this.lblEmp_ids.Size = new System.Drawing.Size(161, 18);
             this.lblEmp_ids.TabIndex = 3;
@@ -79,7 +79,7 @@
             // lblCom_content
             // 
             this.lblCom_content.AutoSize = true;
-            this.lblCom_content.Location = new System.Drawing.Point(69, 328);
+            this.lblCom_content.Location = new System.Drawing.Point(69, 341);
             this.lblCom_content.Name = "lblCom_content";
             this.lblCom_content.Size = new System.Drawing.Size(107, 18);
             this.lblCom_content.TabIndex = 4;
@@ -87,7 +87,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(272, 33);
+            this.txtID.Location = new System.Drawing.Point(272, 46);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(248, 28);
@@ -95,7 +95,7 @@
             // 
             // txtOrder_id
             // 
-            this.txtOrder_id.Location = new System.Drawing.Point(272, 107);
+            this.txtOrder_id.Location = new System.Drawing.Point(272, 120);
             this.txtOrder_id.Name = "txtOrder_id";
             this.txtOrder_id.ReadOnly = true;
             this.txtOrder_id.Size = new System.Drawing.Size(248, 28);
@@ -103,7 +103,7 @@
             // 
             // txtCom_time
             // 
-            this.txtCom_time.Location = new System.Drawing.Point(272, 173);
+            this.txtCom_time.Location = new System.Drawing.Point(272, 186);
             this.txtCom_time.Name = "txtCom_time";
             this.txtCom_time.ReadOnly = true;
             this.txtCom_time.Size = new System.Drawing.Size(248, 28);
@@ -112,7 +112,7 @@
             // txtEmp_ids
             // 
             this.txtEmp_ids.AcceptsReturn = true;
-            this.txtEmp_ids.Location = new System.Drawing.Point(272, 224);
+            this.txtEmp_ids.Location = new System.Drawing.Point(272, 237);
             this.txtEmp_ids.Multiline = true;
             this.txtEmp_ids.Name = "txtEmp_ids";
             this.txtEmp_ids.ReadOnly = true;
@@ -121,18 +121,18 @@
             // 
             // txtCom_content
             // 
-            this.txtCom_content.Location = new System.Drawing.Point(272, 328);
+            this.txtCom_content.Location = new System.Drawing.Point(272, 341);
             this.txtCom_content.Multiline = true;
             this.txtCom_content.Name = "txtCom_content";
             this.txtCom_content.ReadOnly = true;
-            this.txtCom_content.Size = new System.Drawing.Size(248, 110);
+            this.txtCom_content.Size = new System.Drawing.Size(248, 134);
             this.txtCom_content.TabIndex = 9;
             // 
             // ComplaintDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 508);
             this.Controls.Add(this.txtCom_content);
             this.Controls.Add(this.txtEmp_ids);
             this.Controls.Add(this.txtCom_time);

@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using LoginRegisterFrame;
+using CCWin;
 namespace HotelmanageSystem
 {
-    public partial class ManagerForm : Form
+    public partial class ManagerForm : Skin_Mac
     {
         public ManagerForm()
         {
@@ -105,10 +106,12 @@ namespace HotelmanageSystem
 
         private void tsbExit_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("确定退出酒店管理系统吗？", "退出提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DialogResult dialogResult = MessageBox.Show("确定退出登录吗？", "退出提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.OK)
             {
-                this.Close();
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+                this.Hide();
             }
         }
 

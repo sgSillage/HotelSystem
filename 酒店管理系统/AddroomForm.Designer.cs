@@ -43,7 +43,7 @@
             // lblRoom_no
             // 
             this.lblRoom_no.AutoSize = true;
-            this.lblRoom_no.Location = new System.Drawing.Point(34, 48);
+            this.lblRoom_no.Location = new System.Drawing.Point(46, 69);
             this.lblRoom_no.Name = "lblRoom_no";
             this.lblRoom_no.Size = new System.Drawing.Size(71, 18);
             this.lblRoom_no.TabIndex = 0;
@@ -52,7 +52,7 @@
             // lblRoom_kind
             // 
             this.lblRoom_kind.AutoSize = true;
-            this.lblRoom_kind.Location = new System.Drawing.Point(34, 110);
+            this.lblRoom_kind.Location = new System.Drawing.Point(46, 131);
             this.lblRoom_kind.Name = "lblRoom_kind";
             this.lblRoom_kind.Size = new System.Drawing.Size(98, 18);
             this.lblRoom_kind.TabIndex = 1;
@@ -61,7 +61,7 @@
             // lblIsnormal
             // 
             this.lblIsnormal.AutoSize = true;
-            this.lblIsnormal.Location = new System.Drawing.Point(34, 164);
+            this.lblIsnormal.Location = new System.Drawing.Point(46, 185);
             this.lblIsnormal.Name = "lblIsnormal";
             this.lblIsnormal.Size = new System.Drawing.Size(125, 18);
             this.lblIsnormal.TabIndex = 2;
@@ -70,7 +70,7 @@
             // lblRoomprice
             // 
             this.lblRoomprice.AutoSize = true;
-            this.lblRoomprice.Location = new System.Drawing.Point(34, 236);
+            this.lblRoomprice.Location = new System.Drawing.Point(46, 257);
             this.lblRoomprice.Name = "lblRoomprice";
             this.lblRoomprice.Size = new System.Drawing.Size(143, 18);
             this.lblRoomprice.TabIndex = 3;
@@ -78,34 +78,42 @@
             // 
             // btnOk
             // 
+            this.btnOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnOk.Image = global::酒店管理系统.Properties.Resources.symbol_check_icon;
+            this.btnOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOk.Location = new System.Drawing.Point(207, 336);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 39);
+            this.btnOk.Size = new System.Drawing.Size(82, 39);
             this.btnOk.TabIndex = 4;
             this.btnOk.Text = "确认";
-            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCancel.Image = global::酒店管理系统.Properties.Resources.delete_icon;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Location = new System.Drawing.Point(447, 336);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(85, 39);
+            this.btnCancel.Size = new System.Drawing.Size(87, 39);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "取消";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtRoom_no
             // 
-            this.txtRoom_no.Location = new System.Drawing.Point(221, 38);
+            this.txtRoom_no.Location = new System.Drawing.Point(233, 59);
             this.txtRoom_no.Name = "txtRoom_no";
             this.txtRoom_no.Size = new System.Drawing.Size(100, 28);
             this.txtRoom_no.TabIndex = 6;
             // 
             // txtRoomkind
             // 
-            this.txtRoomkind.Location = new System.Drawing.Point(221, 99);
+            this.txtRoomkind.Location = new System.Drawing.Point(233, 120);
             this.txtRoomkind.Name = "txtRoomkind";
             this.txtRoomkind.Size = new System.Drawing.Size(100, 28);
             this.txtRoomkind.TabIndex = 7;
@@ -113,9 +121,10 @@
             // 
             // txtRoomprice
             // 
-            this.txtRoomprice.Location = new System.Drawing.Point(221, 226);
+            this.txtRoomprice.Font = new System.Drawing.Font("宋体", 10.5F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtRoomprice.Location = new System.Drawing.Point(233, 247);
             this.txtRoomprice.Name = "txtRoomprice";
-            this.txtRoomprice.Size = new System.Drawing.Size(100, 28);
+            this.txtRoomprice.Size = new System.Drawing.Size(100, 31);
             this.txtRoomprice.TabIndex = 8;
             // 
             // cmbIsnormal
@@ -125,7 +134,7 @@
             this.cmbIsnormal.Items.AddRange(new object[] {
             "是",
             "否"});
-            this.cmbIsnormal.Location = new System.Drawing.Point(221, 155);
+            this.cmbIsnormal.Location = new System.Drawing.Point(233, 176);
             this.cmbIsnormal.Name = "cmbIsnormal";
             this.cmbIsnormal.Size = new System.Drawing.Size(100, 26);
             this.cmbIsnormal.TabIndex = 9;
@@ -134,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 410);
+            this.ClientSize = new System.Drawing.Size(734, 456);
             this.Controls.Add(this.cmbIsnormal);
             this.Controls.Add(this.txtRoomprice);
             this.Controls.Add(this.txtRoomkind);

@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CCWin;
 
 namespace HotelmanageSystem
 {
-    public partial class ComplaintDetailsForm : Form
+    public partial class ComplaintDetailsForm : Skin_Mac
     {
         private string com_id;
         private string order_id;

@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CCWin;
 namespace HotelmanageSystem
 {
-    public partial class ModifyPasswordForm : Form
+    public partial class ModifyPasswordForm : Skin_Mac
     {
         private string kind;//记录类型
         private DBHandler dBHandler;

@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CCWin;
 namespace HotelmanageSystem
 {
-    public partial class ComplaintForm : Form
+    public partial class ComplaintForm : Skin_Mac
     {
         private DBHandler dBHandler;
         public ComplaintForm()

@@ -229,3 +229,4 @@ C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\ReceptionSecti
 C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\酒店管理系统.Properties.Resources.resources
 C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\HotelManageSystem.csproj.CoreCompileInputs.cache
 C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\HotelManageSystem.csproj.CopyComplete
+E:\pan\大学学习资源\大二下课件\数据库原理与应用\课程项目\HotelSystem\酒店管理系统\bin\Debug\CSkin.dll
