@@ -40,8 +40,8 @@ namespace LoginRegisterFrame
                 using (MySqlCommand countUser = new MySqlCommand("select count(user_id) from user", conn))
                 {
                     MySqlDataReader reader = countUser.ExecuteReader();
-                    while (reader.Read())
-                        count++;
+                    reader.Read();
+                    count = reader.GetInt32("count(user_id)") + 1;
                 }
                 conn.Close();
             }
@@ -141,20 +141,36 @@ namespace LoginRegisterFrame
             using (MySqlConnection conn = new MySqlConnection(connString))
             {
                 conn.Open();
-                using (MySqlCommand registerIdentity = new MySqlCommand())//将信息插入至identity_card的表中
+                try
                 {
-                    string sql = "insert into identity_card values('@identity','@name',@sex,'@phoneNumber')";
-                    registerIdentity.Connection = conn;
-                    registerIdentity.CommandText = sql;
-                    registerIdentity.ExecuteNonQuery();
-                }
+                    using (MySqlCommand registerIdentity = new MySqlCommand())//将信息插入至identity_card的表中
+                    {
+                        string sql = "insert into identity_card values(@identity,@name,@sex,@phoneNumber)";
+                        registerIdentity.Connection = conn;
+                        registerIdentity.CommandText = sql;
+                        registerIdentity.Parameters.AddWithValue("@sex", sex);
+                        registerIdentity.Parameters.AddWithValue("@name", name);
+                        registerIdentity.Parameters.AddWithValue("@identity", identity);
+                        registerIdentity.Parameters.AddWithValue("@phoneNumber", phoneNumber);
+                        registerIdentity.ExecuteNonQuery();
+                    }
 
-                using (MySqlCommand registerUser = new MySqlCommand())//将信息插入至user的表中
+                    using (MySqlCommand registerUser = new MySqlCommand())//将信息插入至user的表中
+                    {
+                        string sql = "insert into user values(@count,@identity,@password, @balance)";
+                        registerUser.Connection = conn;
+                        registerUser.CommandText = sql;
+                        registerUser.Parameters.AddWithValue("@count", count);
+                        registerUser.Parameters.AddWithValue("@identity", identity);
+                        registerUser.Parameters.AddWithValue("@password", password);
+                        registerUser.Parameters.AddWithValue("@balance", null);
+                        registerUser.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("注册成功，您的账号是：" + count.ToString() + "。请牢记！");
+                }
+                catch(MySql.Data.MySqlClient.MySqlException exception)
                 {
-                    string sql = "insert into user values(@count,'@identity','@password')";
-                    registerUser.Connection = conn;
-                    registerUser.CommandText = sql;
-                    registerUser.ExecuteNonQuery();
+                    MessageBox.Show("注册失败，也许是您的身份证号已经被注册了？");
                 }
                 conn.Close();
             }

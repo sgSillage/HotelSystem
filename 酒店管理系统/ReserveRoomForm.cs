@@ -43,10 +43,5 @@ namespace WindowsFormsApp1
                     MessageBox.Show("预定成功！");
             }
         }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
