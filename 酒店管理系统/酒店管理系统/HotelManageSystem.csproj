@@ -159,6 +159,12 @@
     <Compile Include="ModifyPasswordForm.Designer.cs">
       <DependentUpon>ModifyPasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="payForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="payForm.designer.cs">
+      <DependentUpon>payForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProcessServiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyPasswordForm.resx">
       <DependentUpon>ModifyPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="payForm.resx">
+      <DependentUpon>payForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProcessServiceForm.resx">
       <DependentUpon>ProcessServiceForm.cs</DependentUpon>
