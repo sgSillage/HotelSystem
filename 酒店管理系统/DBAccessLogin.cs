@@ -168,7 +168,7 @@ namespace LoginRegisterFrame
                 }
                 catch(MySql.Data.MySqlClient.MySqlException exception)
                 {
-                    MessageBox.Show("注册失败，也许是您的身份证号已经被注册了？");
+                    MessageBox.Show("注册失败，也许是您的身份证号已经被注册了？", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 conn.Close();
             }

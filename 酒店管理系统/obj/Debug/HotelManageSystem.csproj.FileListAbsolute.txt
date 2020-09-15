@@ -281,3 +281,5 @@ D:\homework\信息管理系统\HotelSystem\酒店管理系统\bin\Debug\K4os.Has
 D:\homework\信息管理系统\HotelSystem\酒店管理系统\bin\Debug\System.Memory.dll
 D:\homework\信息管理系统\HotelSystem\酒店管理系统\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\homework\信息管理系统\HotelSystem\酒店管理系统\obj\Debug\HotelManageSystem.csproj.CopyComplete
+C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\bin\Debug\System.Memory.dll
+C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\酒店管理系统.exe.config

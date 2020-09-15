@@ -26,47 +26,22 @@ namespace LoginRegisterFrame
             this.ControlBox = false;
         }
 
-        private void buttonRegisterCancel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            this.Owner.Show();
-        }
-
-        private void buttonSearch_Click(object sender, EventArgs e)
-        {
-            bool isFind = false;
-            string account = "";
-            string identity = textBoxIdentity.Text;
-
-            account = dbLogin.GetAccount(identity);
-            if(account!="")
-            {
-                isFind = true;
-            }
-
-            if (isFind)
-            {
-                if(MessageBox.Show("您的账号为："+account+"\n是否要找回密码？","提示",MessageBoxButtons.OKCancel,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2)
-                    ==System.Windows.Forms.DialogResult.OK)
-                {
-                    FindPassword findPassword = new FindPassword();
-                    findPassword.Owner = this.Owner;
-                    this.Hide();
-                    findPassword.Show();
-                }
-            }
-            else
-            {
-                MessageBox.Show("未找到该身份证对应的账号\n请重新输入身份证号或者进行注册！", "提示");
-            }
-
-        }
-
         private void skinButton1_Click(object sender, EventArgs e)
         {
             bool isFind = false;
             string account = "";
             string identity = textBoxIdentity.Text;
+            //判断identity是否符合格式
+            if(identity=="")
+            {
+                MessageBox.Show("请输入身份证号码！", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if(identity.Length!=18)
+            {
+                MessageBox.Show("身份证号格式不对，请重新输入！", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             account = dbLogin.GetAccount(identity);
             if (account != "")
@@ -87,7 +62,7 @@ namespace LoginRegisterFrame
             }
             else
             {
-                MessageBox.Show("未找到该身份证对应的账号\n请重新输入身份证号或者进行注册！", "提示");
+                MessageBox.Show("未找到该身份证对应的账号\n请重新输入身份证号或者进行注册！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
 
