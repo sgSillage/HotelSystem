@@ -89,7 +89,6 @@ namespace LoginRegisterFrame
         {
             string account = "";
 
-            string connString = "server=localhost; database=mydb;uid=root;pwd=nmb15963.";
             using (MySqlConnection conn = new MySqlConnection(connString))
             {
                 conn.Open();
@@ -157,13 +156,12 @@ namespace LoginRegisterFrame
 
                     using (MySqlCommand registerUser = new MySqlCommand())//将信息插入至user的表中
                     {
-                        string sql = "insert into user values(@count,@identity,@password, @balance)";
+                        string sql = "insert into user values(@count,@identity,@password)";
                         registerUser.Connection = conn;
                         registerUser.CommandText = sql;
                         registerUser.Parameters.AddWithValue("@count", count);
                         registerUser.Parameters.AddWithValue("@identity", identity);
                         registerUser.Parameters.AddWithValue("@password", password);
-                        registerUser.Parameters.AddWithValue("@balance", null);
                         registerUser.ExecuteNonQuery();
                     }
                     MessageBox.Show("注册成功，您的账号是：" + count.ToString() + "。请牢记！");
@@ -261,6 +259,8 @@ namespace LoginRegisterFrame
                     string sql = "Update user set user_password=@password where user_id=@id";
                     cmd.Connection = conn;
                     cmd.CommandText = sql;
+                    cmd.Parameters.Add(new MySqlParameter("@password", password));
+                    cmd.Parameters.Add(new MySqlParameter("@id", id));
                     cmd.ExecuteNonQuery();
                 }
             }
