@@ -494,12 +494,22 @@ namespace WindowsFormsApp1
             updateWallet(realMoney,id);
             
         }
-        public static void pay(int money)
+        public static bool pay(int money)
         {
             int realMoney;
             realMoney = (searchWallet(id) - money);
-            updateWallet(realMoney, id);
-            MessageBox.Show("支付成功");
+            if (realMoney < 0)
+            {
+                MessageBox.Show("余额不足");
+                return false;
+            }
+            else
+            {
+                updateWallet(realMoney, id);
+                MessageBox.Show("支付成功");
+                return true;
+            }
+            
         }
         public static void updateWallet(int money, int uid)
         {

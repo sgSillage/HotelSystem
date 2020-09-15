@@ -24,8 +24,12 @@ namespace WindowsFormsApp1
         {
             int cost;
             cost = User.searchMembershipCost((User.viplevel + 1));
-            User.pay(cost);
-            User.GetVip((User.viplevel + 1), User.id);
+            if (User.pay(cost))
+            {
+                User.GetVip((User.viplevel + 1), User.id);
+            }
+            
+            
             show();
         }
 

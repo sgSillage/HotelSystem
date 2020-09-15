@@ -146,3 +146,5 @@ C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\酒店管理�
 C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\酒店管理系统\obj\Debug\酒店管理系统.exe
 C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\酒店管理系统\obj\Debug\酒店管理系统.pdb
 C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\酒店管理系统\obj\Debug\酒店管理系统.payForm.resources
+C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\酒店管理系统\bin\Debug\MySql.Data.dll
+C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\酒店管理系统\bin\Debug\MySql.Data.xml

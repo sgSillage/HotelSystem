@@ -56,8 +56,12 @@ namespace WindowsFormsApp1
                 //MessageBox.Show((User.searchServiceMoney(s) * User.searchMembershipDiscount(User.CheckVip(User.id))*0.1).ToString());
                 //MessageBox.Show("申请了服务:" + s+"钱"+money.ToString(), "提示");
                 money = Convert.ToInt32(User.searchServiceMoney(s) * User.searchMembershipDiscount(User.CheckVip(User.id)) * 0.1);
-                User.pay(money);
-                User.AppforSev(User.id, s);
+                if (User.pay(money))
+                {
+                    User.AppforSev(User.id, s);
+                }
+                //User.pay(money);
+                //User.AppforSev(User.id, s);
                 //MessageBox.Show("申请成功");
                 panel1.SendToBack();
 

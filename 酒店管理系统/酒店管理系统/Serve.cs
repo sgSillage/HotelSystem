@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
 
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
-                string sql = "select * from ser_order where user_id = " + User.id.ToString();
+                string sql = "select * from ser_order where user_id = " + User.id.ToString() + " order by ser_time desc";
                 cmd.Connection = conn;
                 cmd.CommandText = sql;
                 MySqlDataReader reader = cmd.ExecuteReader();//创建一个执行命令的对象,但是还没有执行命令
