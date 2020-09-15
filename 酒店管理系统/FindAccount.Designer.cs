@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelNotice = new System.Windows.Forms.Label();
             this.textBoxIdentity = new System.Windows.Forms.TextBox();
-            this.buttonFindACancel = new System.Windows.Forms.Button();
-            this.buttonSearch = new System.Windows.Forms.Button();
+            this.skinButtonSearch = new CCWin.SkinControl.SkinButton();
+            this.skinButtonCancel = new CCWin.SkinControl.SkinButton();
             this.SuspendLayout();
             // 
             // labelNotice
             // 
             this.labelNotice.AutoSize = true;
-            this.labelNotice.Location = new System.Drawing.Point(210, 158);
+            this.labelNotice.Location = new System.Drawing.Point(201, 186);
             this.labelNotice.Name = "labelNotice";
             this.labelNotice.Size = new System.Drawing.Size(112, 15);
             this.labelNotice.TabIndex = 0;
@@ -45,38 +46,49 @@
             // 
             // textBoxIdentity
             // 
-            this.textBoxIdentity.Location = new System.Drawing.Point(328, 155);
+            this.textBoxIdentity.Location = new System.Drawing.Point(319, 183);
             this.textBoxIdentity.Name = "textBoxIdentity";
             this.textBoxIdentity.Size = new System.Drawing.Size(272, 25);
             this.textBoxIdentity.TabIndex = 1;
             // 
-            // buttonFindACancel
+            // skinButtonSearch
             // 
-            this.buttonFindACancel.Location = new System.Drawing.Point(449, 210);
-            this.buttonFindACancel.Name = "buttonFindACancel";
-            this.buttonFindACancel.Size = new System.Drawing.Size(102, 37);
-            this.buttonFindACancel.TabIndex = 15;
-            this.buttonFindACancel.Text = "取消";
-            this.buttonFindACancel.UseVisualStyleBackColor = true;
-            this.buttonFindACancel.Click += new System.EventHandler(this.buttonRegisterCancel_Click);
+            this.skinButtonSearch.BackColor = System.Drawing.Color.Transparent;
+            this.skinButtonSearch.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButtonSearch.DownBack = null;
+            this.skinButtonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.skinButtonSearch.Location = new System.Drawing.Point(255, 258);
+            this.skinButtonSearch.MouseBack = null;
+            this.skinButtonSearch.Name = "skinButtonSearch";
+            this.skinButtonSearch.NormlBack = null;
+            this.skinButtonSearch.Size = new System.Drawing.Size(102, 37);
+            this.skinButtonSearch.TabIndex = 16;
+            this.skinButtonSearch.Text = "查询";
+            this.skinButtonSearch.UseVisualStyleBackColor = false;
+            this.skinButtonSearch.Click += new System.EventHandler(this.skinButton1_Click);
             // 
-            // buttonSearch
+            // skinButtonCancel
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(254, 210);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(102, 37);
-            this.buttonSearch.TabIndex = 14;
-            this.buttonSearch.Text = "查询";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.skinButtonCancel.BackColor = System.Drawing.Color.Transparent;
+            this.skinButtonCancel.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButtonCancel.DownBack = null;
+            this.skinButtonCancel.Location = new System.Drawing.Point(455, 258);
+            this.skinButtonCancel.MouseBack = null;
+            this.skinButtonCancel.Name = "skinButtonCancel";
+            this.skinButtonCancel.NormlBack = null;
+            this.skinButtonCancel.Size = new System.Drawing.Size(102, 37);
+            this.skinButtonCancel.TabIndex = 17;
+            this.skinButtonCancel.Text = "取消";
+            this.skinButtonCancel.UseVisualStyleBackColor = false;
+            this.skinButtonCancel.Click += new System.EventHandler(this.skinButtonCancel_Click);
             // 
             // FindAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonFindACancel);
-            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.skinButtonCancel);
+            this.Controls.Add(this.skinButtonSearch);
             this.Controls.Add(this.textBoxIdentity);
             this.Controls.Add(this.labelNotice);
             this.Name = "FindAccount";
@@ -91,7 +103,7 @@
 
         private System.Windows.Forms.Label labelNotice;
         private System.Windows.Forms.TextBox textBoxIdentity;
-        private System.Windows.Forms.Button buttonFindACancel;
-        private System.Windows.Forms.Button buttonSearch;
+        private CCWin.SkinControl.SkinButton skinButtonSearch;
+        private CCWin.SkinControl.SkinButton skinButtonCancel;
     }
 }
