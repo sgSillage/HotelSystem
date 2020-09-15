@@ -215,7 +215,7 @@ namespace LoginRegisterFrame
 
         private void skinButtonLogin_Click(object sender, EventArgs e)
         {
-            int category = 0;
+            /*int category = 0;
             string id = textBoxAccount.Text;
             string password = textBoxPassword.Text;
             switch (comboBoxCatagory.Text)
@@ -258,7 +258,7 @@ namespace LoginRegisterFrame
                 MessageBox.Show("密码错误，请重试", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else if (isID && isPassword)
-            {
+            {*/
                 if (comboBoxCatagory.Text == "管理员")
                 {
                     ManagerForm managerForm = new ManagerForm();
@@ -281,7 +281,7 @@ namespace LoginRegisterFrame
                     this.Hide();
                     receptionForm.Show();
                 }
-            }
+           // }
         }
 
         private void skinButtonRegister_Click(object sender, EventArgs e)
