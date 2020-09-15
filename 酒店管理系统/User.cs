@@ -172,10 +172,33 @@ namespace WindowsFormsApp1
             MessageBox.Show("无入住记录。。。");
             return 0;
         }
-        public static void Comment(DateTime time, int user_id, string s, int star)
+        public static void Comment(DateTime time, int user_id, string s, int star)//评论
         {
             //***
+
+            ////向evaluate表中插入信息,见参数列表
+            MySqlConnection conn = new MySqlConnection(connString);
+            conn.Open();
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+                string sql = "Insert into evaluate values('" + time + "','" + user_id + "','"
+                    + s + "','" + star + "')";
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+            conn.Close();
             ////向评论表中插入信息
+            ///
+            MessageBox.Show("评论成功。");
+            return;
         }
         public static void ChangeRoom(int level, int beg_time, int end_time)//给用户更换房间
         {
