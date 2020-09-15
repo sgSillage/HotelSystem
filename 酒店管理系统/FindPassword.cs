@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CCWin;
 
 namespace LoginRegisterFrame
 {
-    public partial class FindPassword : Form
+    public partial class FindPassword : Skin_Mac
     {
         private DBLogin dbLogin;
         public FindPassword()

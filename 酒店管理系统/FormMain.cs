@@ -11,10 +11,11 @@ using MySql.Data.MySqlClient;
 using HotelmanageSystem;
 using WindowsFormsApp1;
 using ReceptionSection;
+using CCWin;
 
 namespace LoginRegisterFrame
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Skin_Mac
     {
         FormRegister register = new FormRegister();
         FindAccount findAccount = new FindAccount();

@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using CCWin;
 
 namespace LoginRegisterFrame
 {
-    public partial class FormRegister : Form
+    public partial class FormRegister : Skin_Mac
     {
         private DBLogin dbLogin;
         public FormRegister()

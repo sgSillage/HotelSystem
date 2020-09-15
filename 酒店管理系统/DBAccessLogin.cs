@@ -143,17 +143,24 @@ namespace LoginRegisterFrame
                 conn.Open();
                 using (MySqlCommand registerIdentity = new MySqlCommand())//将信息插入至identity_card的表中
                 {
-                    string sql = "insert into identity_card values('@identity','@name',@sex,'@phoneNumber')";
+                    string sql = "insert into identity_card(identity, name, gender, phone) values(@identity,@name,@sex,@phoneNumber)";
                     registerIdentity.Connection = conn;
                     registerIdentity.CommandText = sql;
+                    registerIdentity.Parameters.Add(new MySqlParameter("@identity", identity));
+                    registerIdentity.Parameters.Add(new MySqlParameter("@name", name));
+                    registerIdentity.Parameters.Add(new MySqlParameter("@sex", sex));
+                    registerIdentity.Parameters.Add(new MySqlParameter("@phoneNumber", phoneNumber));
                     registerIdentity.ExecuteNonQuery();
                 }
 
                 using (MySqlCommand registerUser = new MySqlCommand())//将信息插入至user的表中
                 {
-                    string sql = "insert into user values(@count,'@identity','@password')";
+                    string sql = "insert into user(user_id, user_identity, user_password) values(@count,@identity,@password)";
                     registerUser.Connection = conn;
                     registerUser.CommandText = sql;
+                    registerUser.Parameters.Add(new MySqlParameter("@count", count));
+                    registerUser.Parameters.Add(new MySqlParameter("@identity", identity));
+                    registerUser.Parameters.Add(new MySqlParameter("@password", password));
                     registerUser.ExecuteNonQuery();
                 }
                 conn.Close();
@@ -245,6 +252,8 @@ namespace LoginRegisterFrame
                     string sql = "Update user set user_password=@password where user_id=@id";
                     cmd.Connection = conn;
                     cmd.CommandText = sql;
+                    cmd.Parameters.Add(new MySqlParameter("@password", password));
+                    cmd.Parameters.Add(new MySqlParameter("@id", id));
                     cmd.ExecuteNonQuery();
                 }
             }
