@@ -62,8 +62,7 @@ namespace HotelmanageSystem
         public List<String> results;//用来存储结果
         public String state;//用来存储状态
         public String exMessage;//用来存储错误信息
-        private const String connStr = "server=localhost;database=mydb;uid=root;pwd=LBJtzbdpxy257890";
-        private const String connString = "server=localhost;database=mydb;uid=root;pwd=LBJtzbdpxy257890";//连接数据库的基本信息
+        private const String connStr = "server=localhost;database=mydb;uid=root;pwd=LBJtzbdpxy257890";//连接数据库的基本信息
         public List<String> Query(String username, String password)
         {
             results = new List<String>();
@@ -503,7 +502,7 @@ namespace HotelmanageSystem
         }
         public void ConnectDatabase()
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             // MessageBox.Show("连接成功！", "测试结果");
             using (MySqlCommand cmd = new MySqlCommand())
@@ -544,7 +543,7 @@ namespace HotelmanageSystem
             string employee_sex, string employee_status, string employee_phone,
             int employee_salary, string employee_time, string employee_position)//插入员工,其中time为2020-06-06这样的字符串
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())
             {
@@ -621,7 +620,7 @@ namespace HotelmanageSystem
         public List<Employee> GetEmployees()//返回所有员工信息，包括员工的编号，姓名，性别，身份证号，手机号，薪水，入职时间，入职岗位
         {
             List<Employee> staff_list = new List<Employee>();
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -652,7 +651,7 @@ namespace HotelmanageSystem
         }
         public void DeleteEmployee(string employee_id,string employee_status)//删除该员工
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -685,7 +684,7 @@ namespace HotelmanageSystem
         }
         public void ModifyEmployeesex(string employee_id, string sex)//将employee_id的员工的性别改为sex(男/女）
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -720,7 +719,7 @@ namespace HotelmanageSystem
         }
         public void ModifyEmployeeID(string old_id, string new_id)//将old_id的员工的员工编号修改为new_id
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -743,7 +742,7 @@ namespace HotelmanageSystem
         }
         public void ModifyEmployeename(string employee_id, string name)//将employee_id的员工的姓名修改为name
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -775,7 +774,7 @@ namespace HotelmanageSystem
         }
         public void ModifyEmployeestatus(string employee_id, string status)//修改身份证号为status
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -823,7 +822,7 @@ namespace HotelmanageSystem
         }
         public void ModifyEmployeephone(string employee_id, string phone)//修改电话号码为phone
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -855,7 +854,7 @@ namespace HotelmanageSystem
         }
         public void ModifyEmployeetime(string employee_id, string time)//修改入职时间为time
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -877,7 +876,7 @@ namespace HotelmanageSystem
         }
         public void ModifyEmployeesalary(string employee_id, int salary)//修改薪水为salary
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -900,7 +899,7 @@ namespace HotelmanageSystem
         //开始
         public void ModifyEmployeeposition(string employee_id, string position)//修改职位为position
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -928,7 +927,7 @@ namespace HotelmanageSystem
             string adm1 = "管理员";
             bool exist;
 
-            using (MySqlConnection conn = new MySqlConnection(connString))
+            using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
                 using (MySqlCommand cmd = new MySqlCommand())
@@ -969,7 +968,7 @@ namespace HotelmanageSystem
             string front1 = "前台";
             string adm1 = "管理员";
 
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -1005,7 +1004,7 @@ namespace HotelmanageSystem
         public List<Complaint> GetComplaints()//返回所有投诉，包括投诉人的ID，投诉的订单编号以及投诉时间，Complaint类我已写好，问我要
         {
             List<Complaint> complaint_list = new List<Complaint>();
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -1027,7 +1026,7 @@ namespace HotelmanageSystem
         }
         public void DeleteComplaint(string ser_order_id)//删除该条投诉
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -1049,7 +1048,7 @@ namespace HotelmanageSystem
         }
         public string GetComplaintContent(string ser_order_id)//获取该投诉的投诉内容
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             string content = "";
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
@@ -1071,7 +1070,7 @@ namespace HotelmanageSystem
         public List<string> GetSer_emp_ids(string ser_order_id)//获取与提供该服务的员工编号/////有待检测
         {
             List<string> staff_id_list = new List<string>();
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -1092,7 +1091,7 @@ namespace HotelmanageSystem
         public List<Income> GetIncomes(string start, string end)//获取这段时间内（包括起始时间和终止时间，收入包括房间费用，服务费用，均按照种类划分）的收入，考虑到天即可
         {
             List<Income> income_list = new List<Income>();
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
@@ -1145,7 +1144,7 @@ namespace HotelmanageSystem
             DateTime startTime = Convert.ToDateTime(start);
             DateTime endTime = Convert.ToDateTime(end);//开始结束时间
             List<Cost> cost_list = new List<Cost>();
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {

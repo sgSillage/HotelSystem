@@ -69,7 +69,7 @@
     <Compile Include="AppServeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppServeForm.Designer.cs">
+    <Compile Include="AppServeForm.designer.cs">
       <DependentUpon>AppServeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ChangeRoomForm.cs">
@@ -154,6 +154,12 @@
     <Compile Include="ModifyPasswordForm.designer.cs">
       <DependentUpon>ModifyPasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="payForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="payForm.designer.cs">
+      <DependentUpon>payForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReserveRoomForm.cs">
@@ -180,7 +186,7 @@
     <Compile Include="VIPForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIPForm.Designer.cs">
+    <Compile Include="VIPForm.designer.cs">
       <DependentUpon>VIPForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VipLevel.cs" />
@@ -285,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyPasswordForm.resx">
       <DependentUpon>ModifyPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="payForm.resx">
+      <DependentUpon>payForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

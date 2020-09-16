@@ -12,6 +12,8 @@ namespace WindowsFormsApp1
 {
     public partial class AppServeForm : Form
     {
+        string _ser;
+        int _money;
         public AppServeForm()
         {
             InitializeComponent();
@@ -30,16 +32,39 @@ namespace WindowsFormsApp1
             the_ser.ReLoad_sers();
             foreach (ser s in the_ser.sers)
             {
-                comboBox_ser.Items.Add(s.type + "(¥" + s.money + ")");
+                if (User.CheckVip(User.id) == 0)
+                {
+                    comboBox_ser.Items.Add(s.type + "(¥" + s.money + ")");
+                }
+                else
+                {
+                    User.discount = 1 - User.CheckVip(User.id) * 0.1;
+                    comboBox_ser.Items.Add(s.type + "(¥" + s.money + ")" + "--会员优惠" + "(¥" + Convert.ToInt32(s.money * User.discount) + ")");
+                }
             }
         }
         //“申请服务”按钮的单击事件，用于向组合框中添加文本框中的值
         private void button1_Click_1(object sender, EventArgs e)
         {
             string s = comboBox_ser.Text;
+            int money=0;
             if (comboBox_ser.Text.Trim().Length != 0)
             {
-                MessageBox.Show("申请了服务:" + s, "提示");
+
+                s = s.Split(new char[] { '(' })[0];
+                s = s.Split(new char[] { '(' })[0];
+                //MessageBox.Show((User.searchServiceMoney(s) * User.searchMembershipDiscount(User.CheckVip(User.id))*0.1).ToString());
+                //MessageBox.Show("申请了服务:" + s+"钱"+money.ToString(), "提示");
+                money = Convert.ToInt32(User.searchServiceMoney(s) * User.searchMembershipDiscount(User.CheckVip(User.id)) * 0.1);
+                if (User.pay(money))
+                {
+                    User.AppforSev(User.id, s);
+                }
+                //User.pay(money);
+                //User.AppforSev(User.id, s);
+                //MessageBox.Show("申请成功");
+                panel1.SendToBack();
+
             }
             else
                 MessageBox.Show("请选择您的服务", "提示");

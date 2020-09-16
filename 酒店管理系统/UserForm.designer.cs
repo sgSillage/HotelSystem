@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.vip_button = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -37,6 +37,11 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pay_button = new System.Windows.Forms.Button();
+            this.label_text = new System.Windows.Forms.Label();
+            this.label_money = new System.Windows.Forms.Label();
+            this.button_fresh = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -50,16 +55,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // vip_button
             // 
-            this.button3.Location = new System.Drawing.Point(143, 2);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 52);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "会员服务";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.vip_button.Location = new System.Drawing.Point(143, 2);
+            this.vip_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.vip_button.Name = "vip_button";
+            this.vip_button.Size = new System.Drawing.Size(125, 52);
+            this.vip_button.TabIndex = 4;
+            this.vip_button.Text = "会员服务";
+            this.vip_button.UseVisualStyleBackColor = true;
+            this.vip_button.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -96,7 +101,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(-1, 254);
+            this.button6.Location = new System.Drawing.Point(145, 335);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(123, 55);
@@ -129,17 +134,66 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.button_fresh);
+            this.panel1.Controls.Add(this.label_money);
+            this.panel1.Controls.Add(this.label_text);
             this.panel1.Location = new System.Drawing.Point(289, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(389, 307);
+            this.panel1.Size = new System.Drawing.Size(405, 307);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pay_button
+            // 
+            this.pay_button.Location = new System.Drawing.Point(-1, 254);
+            this.pay_button.Name = "pay_button";
+            this.pay_button.Size = new System.Drawing.Size(122, 54);
+            this.pay_button.TabIndex = 11;
+            this.pay_button.Text = "充值";
+            this.pay_button.UseVisualStyleBackColor = true;
+            this.pay_button.Click += new System.EventHandler(this.pay_button_Click);
+            // 
+            // label_text
+            // 
+            this.label_text.AutoSize = true;
+            this.label_text.Font = new System.Drawing.Font("华文彩云", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_text.Location = new System.Drawing.Point(6, 39);
+            this.label_text.Name = "label_text";
+            this.label_text.Size = new System.Drawing.Size(399, 73);
+            this.label_text.TabIndex = 0;
+            this.label_text.Text = "您的钱包 ：";
+            // 
+            // label_money
+            // 
+            this.label_money.AutoSize = true;
+            this.label_money.Font = new System.Drawing.Font("华文彩云", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_money.Location = new System.Drawing.Point(26, 137);
+            this.label_money.Name = "label_money";
+            this.label_money.Size = new System.Drawing.Size(159, 73);
+            this.label_money.TabIndex = 1;
+            this.label_money.Text = " 0元";
+            this.label_money.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button_fresh
+            // 
+            this.button_fresh.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button_fresh.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_fresh.Location = new System.Drawing.Point(333, 2);
+            this.button_fresh.Name = "button_fresh";
+            this.button_fresh.Size = new System.Drawing.Size(71, 34);
+            this.button_fresh.TabIndex = 2;
+            this.button_fresh.Text = "刷新";
+            this.button_fresh.UseVisualStyleBackColor = false;
+            this.button_fresh.Click += new System.EventHandler(this.button_fresh_Click);
             // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 309);
+            this.ClientSize = new System.Drawing.Size(706, 410);
+            this.Controls.Add(this.pay_button);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
@@ -147,11 +201,13 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.vip_button);
             this.Controls.Add(this.button6);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserForm";
             this.Text = "用户程序";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -159,7 +215,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button vip_button;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
@@ -167,6 +223,10 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button pay_button;
+        private System.Windows.Forms.Label label_money;
+        private System.Windows.Forms.Label label_text;
+        private System.Windows.Forms.Button button_fresh;
     }
 }
 

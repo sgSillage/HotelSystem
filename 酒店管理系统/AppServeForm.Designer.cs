@@ -50,12 +50,13 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Location = new System.Drawing.Point(76, 65);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 32);
             this.button1.TabIndex = 1;
             this.button1.Text = "申请服务";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label2
@@ -69,6 +70,7 @@
             // 
             // comboBox_ser
             // 
+            this.comboBox_ser.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.comboBox_ser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_ser.FormattingEnabled = true;
             this.comboBox_ser.Location = new System.Drawing.Point(12, 36);
@@ -79,6 +81,8 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.comboBox_ser);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button1);
@@ -119,7 +123,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "服务订单编号";
-            this.columnHeader3.Width = 117;
+            this.columnHeader3.Width = 184;
             // 
             // contextMenuStrip1
             // 
