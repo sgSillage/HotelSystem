@@ -294,29 +294,6 @@ namespace WindowsFormsApp1
             conn.Close();
             return room_id2;
         }
-        public static void Comment(string time, char uid, string content, char star)
-        {
-            //***
-            ////向evaluate表中插入信息,见参数列表
-            MySqlConnection conn = new MySqlConnection(connStr);
-            conn.Open();
-            using (MySqlCommand cmd = new MySqlCommand())
-            {
-                string sql = "Insert into evaluate values('" + time + "','" + uid + "','"
-                    + content + "','" + star + "')";
-                cmd.Connection = conn;
-                cmd.CommandText = sql;
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message);
-                }
-            }
-            conn.Close();
-        }
         public static string AppforSev(int uid, string type)//申请服务                
         {
             //***
@@ -528,10 +505,31 @@ namespace WindowsFormsApp1
             
             return userOrders;
         }
-        public static void Comment(DateTime time, int user_id, string s, int star)
+        public static void Comment(DateTime time, int user_id, string s, int star)//评论
         {
-            //***
+            ////向evaluate表中插入信息,见参数列表
+            MySqlConnection conn = new MySqlConnection(connStr);
+            conn.Open();
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+                string sql = "Insert into evaluate values('" + time + "','" + user_id + "','"
+                    + s + "','" + star + "')";
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+            conn.Close();
             ////向评论表中插入信息
+            ///
+            MessageBox.Show("评论成功。");
+            return;
         }
         public static void ChangeRoom(string level, DateTime beg_time, DateTime end_time)//给用户更换房间
         {
