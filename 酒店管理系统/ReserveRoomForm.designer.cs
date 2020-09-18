@@ -70,7 +70,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(95, 200);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 43);
             this.button1.TabIndex = 6;
@@ -80,14 +80,13 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "单人房",
             "双人房",
             "总统套房"});
             this.comboBox1.Location = new System.Drawing.Point(130, 32);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 23);
             this.comboBox1.TabIndex = 7;
@@ -120,7 +119,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ReserveRoomForm";
             this.Text = "ReserveRoom";
             this.ResumeLayout(false);

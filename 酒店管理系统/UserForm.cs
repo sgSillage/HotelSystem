@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1;
 using 酒店管理系统;
-using LoginRegisterFrame;
 
 namespace WindowsFormsApp1
 {
@@ -61,9 +60,8 @@ namespace WindowsFormsApp1
 
         private void ChangeRoomClicked(object sender, EventArgs e)
         {
-            this.Dispose();
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
+            ChangeRoomForm RRForm = new ChangeRoomForm();//这两段代码可以生成一个新窗口
+            RRForm.Show();
         }
 
         private void CommentClicked(object sender, EventArgs e)

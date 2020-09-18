@@ -16,7 +16,6 @@ namespace 酒店管理系统
         public informationForm()
         {
             InitializeComponent();
-            User.getInformation();
             label_phone.Text = User.phone;
             label_id.Text = User.id.ToString();
         }
@@ -33,7 +32,6 @@ namespace 酒店管理系统
             label_sex.Text = User.gender;
             label_iden.Text = User.identity;
             panel_iden.Visible = true;
-            panel_phone.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,7 +42,7 @@ namespace 酒店管理系统
         private void label_phone_Click(object sender, EventArgs e)
         {
             panel_phone.Visible = true;
-            textBox_phone.Text = label_phone.Text;
+            textBox_phone.Text = User.phone;
             button_phone.Visible = false;
             
         }
@@ -63,7 +61,6 @@ namespace 酒店管理系统
         {
             if (User.changePhone(textBox_phone.Text))
             {
-                label_phone.Text = textBox_phone.Text;
                 MessageBox.Show("修改成功");
             }
             else

@@ -201,15 +201,15 @@
             // 
             this.panel_phone.Controls.Add(this.button_phone);
             this.panel_phone.Controls.Add(this.textBox_phone);
-            this.panel_phone.Location = new System.Drawing.Point(151, 65);
+            this.panel_phone.Location = new System.Drawing.Point(138, 65);
             this.panel_phone.Name = "panel_phone";
-            this.panel_phone.Size = new System.Drawing.Size(158, 80);
+            this.panel_phone.Size = new System.Drawing.Size(176, 80);
             this.panel_phone.TabIndex = 8;
             this.panel_phone.Visible = false;
             // 
             // button_phone
             // 
-            this.button_phone.Location = new System.Drawing.Point(37, 43);
+            this.button_phone.Location = new System.Drawing.Point(40, 43);
             this.button_phone.Name = "button_phone";
             this.button_phone.Size = new System.Drawing.Size(100, 34);
             this.button_phone.TabIndex = 1;
@@ -219,11 +219,10 @@
             // 
             // textBox_phone
             // 
-            this.textBox_phone.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox_phone.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_phone.Location = new System.Drawing.Point(0, 0);
-            this.textBox_phone.MaxLength = 11;
             this.textBox_phone.Name = "textBox_phone";
-            this.textBox_phone.Size = new System.Drawing.Size(156, 30);
+            this.textBox_phone.Size = new System.Drawing.Size(176, 28);
             this.textBox_phone.TabIndex = 0;
             this.textBox_phone.TextChanged += new System.EventHandler(this.textBox_phone_TextChanged);
             // 

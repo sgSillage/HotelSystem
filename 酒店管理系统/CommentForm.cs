@@ -26,8 +26,7 @@ namespace WindowsFormsApp1
         {
             string s = textBox3.Text;
             DateTime t = DateTime.Now;
-            User.Comment(t,User.id.ToString(),s, star);
-            MessageBox.Show("评论成功！");
+            User.Comment(t,User.id,s, star);
             Close();
         }
 

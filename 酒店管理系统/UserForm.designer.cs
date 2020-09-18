@@ -90,12 +90,12 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(342, 2);
+            this.button7.Location = new System.Drawing.Point(-1, 327);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(63, 31);
+            this.button7.Size = new System.Drawing.Size(123, 55);
             this.button7.TabIndex = 9;
-            this.button7.Text = "注销";
+            this.button7.Text = "更换房间";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.ChangeRoomClicked);
             // 
@@ -116,7 +116,6 @@
             this.panel1.Controls.Add(this.button_fresh);
             this.panel1.Controls.Add(this.label_money);
             this.panel1.Controls.Add(this.label_text);
-            this.panel1.Controls.Add(this.button7);
             this.panel1.Location = new System.Drawing.Point(289, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
@@ -129,7 +128,7 @@
             // 
             this.button_fresh.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.button_fresh.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button_fresh.Location = new System.Drawing.Point(0, 0);
+            this.button_fresh.Location = new System.Drawing.Point(333, 2);
             this.button_fresh.Name = "button_fresh";
             this.button_fresh.Size = new System.Drawing.Size(71, 34);
             this.button_fresh.TabIndex = 2;
@@ -201,6 +200,7 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.vip_button);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserForm";

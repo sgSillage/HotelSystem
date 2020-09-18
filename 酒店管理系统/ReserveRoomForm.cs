@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
             {
                 if (User.OrderRoom(comboBox1.Text, beg_time, end_time).Length == 1)
                 {
-                    MessageBox.Show("预定失败：没有可用的房源");
+                    MessageBox.Show("预定失败。。。");
                 }
                 else
                     MessageBox.Show("预定成功！");
