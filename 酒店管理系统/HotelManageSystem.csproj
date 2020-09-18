@@ -116,6 +116,12 @@
     <Compile Include="ComplaintForm.designer.cs">
       <DependentUpon>ComplaintForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComplaintServeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComplaintServeForm.Designer.cs">
+      <DependentUpon>ComplaintServeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cost.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="Employee.cs" />
@@ -299,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ComplaintForm.resx">
       <DependentUpon>ComplaintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComplaintServeForm.resx">
+      <DependentUpon>ComplaintServeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeListForm.resx">
       <DependentUpon>EmployeeListForm.cs</DependentUpon>

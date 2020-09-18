@@ -237,42 +237,58 @@ namespace WindowsFormsApp1
             //找满足type且在beg_time到end_time之间空闲的房间
             //找到返回房间号，找不到则返回0
             string room_id = "#";
-            MySqlConnection conn = new MySqlConnection();
-            try
+            string query1 = "select room_id\n" +
+                            "from room\n" +
+                            "where type=@type and status=1";
+
+            MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlConnection conn1 = new MySqlConnection(connStr);
+            
+            conn.Open();
+
+            using (MySqlCommand cmd = new MySqlCommand())//创建查询命令
             {
-                conn.ConnectionString = connStr;
-                conn.Open();
-                state = conn.State.ToString();//保存状态信息
-                MySqlCommand cmd = new MySqlCommand();//新建一个SQL执行对象
                 cmd.Connection = conn;
-                cmd.CommandText = "select room_id from room natural left join reserve where type =@type and status=@state" +
-                    " and (start_time is null or ( @end_time  <= start_time or @beg_time >= final_time))";
+                cmd.CommandText = query1;
                 cmd.Parameters.Add(new MySqlParameter("@type", type));
-                cmd.Parameters.Add(new MySqlParameter("@state", "1"));
-                cmd.Parameters.Add(new MySqlParameter("@end_time", end_time.ToShortDateString()));
-                //MessageBox.Show(end_time.ToLongDateString());
-                cmd.Parameters.Add(new MySqlParameter("@start_time", beg_time.ToShortDateString()));
-                //MessageBox.Show(beg_time.ToLongDateString());
-
-                MySqlDataReader ord = cmd.ExecuteReader(); //执行查询操作
-               if (ord.Read())
+                MySqlDataReader reader = cmd.ExecuteReader();//创建一个执行读命令的对象,但是还没有执行命令
+                string cur_room_id = "";
+                while (reader.Read())//按行执行查询，每次循环查询一行
                 {
-                    room_id = ord.GetString("room_id");
+                    bool cur_room_availible = true;
+                    cur_room_id = reader.GetString("room_id");
+                    string query2 = "select *\n" +
+                                    "from reserve\n" +
+                                    "where room_id='" + cur_room_id + "';";
+                    conn1.Open();
+                    using (MySqlCommand inner_cmd = new MySqlCommand())
+                    {
+                        inner_cmd.Connection = conn1;
+                        inner_cmd.CommandText = query2;
+                        MySqlDataReader inner_reader = inner_cmd.ExecuteReader();//创建一个执行读命令的对象,但是还没有执行命令
+                        while (inner_reader.Read())
+                        {
+                            DateTime start = inner_reader.GetDateTime("start_time");
+                            DateTime final = inner_reader.GetDateTime("final_time");
+                            if (!(end_time < start || final < beg_time))
+                            {
+                                cur_room_availible = false;
+                                break;
+                            }
+                        }
+                    }
+                    conn1.Close();
+                    if (cur_room_availible)
+                    {
+                        return cur_room_id;
+                    }
                 }
+            }
+            conn.Close();
 
-            }
-            catch (Exception ex)
-            {
-                exMessage = ex.Message.ToString();
-                MessageBox.Show(exMessage);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            MessageBox.Show(room_id.ToString());
-            return room_id;
+            return "0";
         }
+
         public static int SearchUserRoom(int uID)//查询ID为uID的用户目前的住房,并返回房间号
         {
             int room_id2 = 0;
@@ -505,31 +521,53 @@ namespace WindowsFormsApp1
             
             return userOrders;
         }
-        public static void Comment(DateTime time, int user_id, string s, int star)//评论
+        public static void Comment(DateTime time, string uid, string content, int star)
         {
+            //***
             ////向evaluate表中插入信息,见参数列表
             MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                string sql = "Insert into evaluate values('" + time + "','" + user_id + "','"
-                    + s + "','" + star + "')";
                 cmd.Connection = conn;
-                cmd.CommandText = sql;
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message);
-                }
+                cmd.CommandText = "Insert into evaluate values(@time1, @uid1, @content1, @star1)";
+                cmd.Parameters.Add(new MySqlParameter("@time1", time));
+                cmd.Parameters.Add(new MySqlParameter("@uid1", uid));
+                cmd.Parameters.Add(new MySqlParameter("@content1", content));
+                cmd.Parameters.Add(new MySqlParameter("@star1", star));
+                cmd.ExecuteNonQuery();
             }
             conn.Close();
-            ////向评论表中插入信息
-            ///
-            MessageBox.Show("评论成功。");
-            return;
+        }
+        public static void complaint(string uid, string order_id, string content, DateTime time)
+        {
+            //***
+            ////向evaluate表中插入信息,见参数列表
+            MySqlConnection conn = new MySqlConnection();
+            try
+            {
+                conn.ConnectionString = connStr;
+                conn.Open();
+                state = conn.State.ToString();//保存状态信息
+                MySqlCommand cmd = new MySqlCommand();//新建一个SQL执行对象
+                cmd.Connection = conn;
+                cmd.CommandText = "Insert into complaint values(@order_id, @uid, @content, @time)";
+                cmd.Parameters.Add(new MySqlParameter("@order_id", order_id));
+                cmd.Parameters.Add(new MySqlParameter("@uid", uid));
+                cmd.Parameters.Add(new MySqlParameter("@content", content));
+                cmd.Parameters.Add(new MySqlParameter("@time", time));
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                exMessage = ex.Message.ToString();
+                MessageBox.Show(exMessage);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
         public static void ChangeRoom(string level, DateTime beg_time, DateTime end_time)//给用户更换房间
         {

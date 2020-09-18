@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using 酒店管理系统;
 
 namespace WindowsFormsApp1
 {
@@ -71,11 +72,6 @@ namespace WindowsFormsApp1
 
         }
 
-        private void ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            panel1.BringToFront();
-        }
-
         private void listView1_MouseDown(object sender, MouseEventArgs e)//鼠标点击空白处关闭右键菜单
         {
             panel1.SendToBack();
@@ -83,6 +79,7 @@ namespace WindowsFormsApp1
 
         private void userSerReload(object sender, EventArgs e)//重新加载用户服务列表
         {
+            int tag = 0;
             listView1.Items.Clear();
             Serve the_ser = new Serve();
             the_ser.ReLoad_ord_sers();
@@ -90,12 +87,44 @@ namespace WindowsFormsApp1
             {
                 ListViewItem a = new ListViewItem(new string[] { s.type, s.time, s.order_id }, -1);
                 listView1.Items.Add(a);
+                a.Tag = tag;
+                tag++;
             }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_newService_Click(object sender, EventArgs e)
+        {
+            panel1.BringToFront();
+        }
+
+        private void complaintToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView1.Items.Count <= 0)
+            {
+                MessageBox.Show("列表中没有任何信息！");
+            }
+            else if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("你没有选中任何项！");
+            }
+            else
+            {
+
+                DialogResult dialogResult = MessageBox.Show("确认投诉改服务吗？", "投诉提示",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.OK)//确认删除
+                {
+                    //  User.complaint(User.id,listView1.SelectedItems[0].SubItems[2].Text,comlaintS,time);
+                    ComplaintServeForm NForm = new ComplaintServeForm();
+                    NForm.order_id = listView1.SelectedItems[0].SubItems[2].Text;
+                    NForm.Show();
+                }
+            }
         }
     }
 }
