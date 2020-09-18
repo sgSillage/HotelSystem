@@ -72,11 +72,23 @@
     <Compile Include="AppServeForm.designer.cs">
       <DependentUpon>AppServeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="cancelOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cancelOrderForm.Designer.cs">
+      <DependentUpon>cancelOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangeRoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChangeRoomForm.Designer.cs">
       <DependentUpon>ChangeRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="changPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="changPasswordForm.Designer.cs">
+      <DependentUpon>changPasswordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CheckInRecord.cs" />
     <Compile Include="CheckInRecordForm.cs">
@@ -142,6 +154,12 @@
       <DependentUpon>IncomeCostForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DBAccessLogin.cs" />
+    <Compile Include="informationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="informationForm.Designer.cs">
+      <DependentUpon>informationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +172,12 @@
     <Compile Include="ModifyPasswordForm.designer.cs">
       <DependentUpon>ModifyPasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="userOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userOrderForm.Designer.cs">
+      <DependentUpon>userOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="payForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +186,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reserve.cs" />
     <Compile Include="ReserveRoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +208,7 @@
     <Compile Include="UserForm.designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="userOrder.cs" />
     <Compile Include="VIPForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,8 +279,14 @@
     <EmbeddedResource Include="AppServeForm.resx">
       <DependentUpon>AppServeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cancelOrderForm.resx">
+      <DependentUpon>cancelOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangeRoomForm.resx">
       <DependentUpon>ChangeRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="changPasswordForm.resx">
+      <DependentUpon>changPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CheckInRecordForm.resx">
       <DependentUpon>CheckInRecordForm.cs</DependentUpon>
@@ -286,11 +318,17 @@
     <EmbeddedResource Include="IncomeCostForm.resx">
       <DependentUpon>IncomeCostForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="informationForm.resx">
+      <DependentUpon>informationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyPasswordForm.resx">
       <DependentUpon>ModifyPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userOrderForm.resx">
+      <DependentUpon>userOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="payForm.resx">
       <DependentUpon>payForm.cs</DependentUpon>

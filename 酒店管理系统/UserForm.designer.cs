@@ -31,22 +31,22 @@
             this.button1 = new System.Windows.Forms.Button();
             this.vip_button = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pay_button = new System.Windows.Forms.Button();
-            this.label_text = new System.Windows.Forms.Label();
-            this.label_money = new System.Windows.Forms.Label();
             this.button_fresh = new System.Windows.Forms.Button();
+            this.label_money = new System.Windows.Forms.Label();
+            this.label_text = new System.Windows.Forms.Label();
+            this.pay_button = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(-1, 177);
+            this.button1.Location = new System.Drawing.Point(143, 91);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 54);
@@ -77,42 +77,20 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.RoomReserveClicked);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(143, 176);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(123, 55);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "查询房间订单";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.SearchOrderClicked);
-            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(143, 90);
+            this.button5.Location = new System.Drawing.Point(-1, 178);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(123, 55);
             this.button5.TabIndex = 7;
-            this.button5.Text = "查看入住记录";
+            this.button5.Text = "查看历史订单";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.SearchRecordClicked);
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(145, 335);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(123, 55);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "退房";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.CheckOutClicked);
-            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(-1, 90);
+            this.button7.Location = new System.Drawing.Point(-1, 327);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(123, 55);
@@ -123,7 +101,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(145, 254);
+            this.button8.Location = new System.Drawing.Point(-1, 252);
             this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(123, 55);
@@ -144,37 +122,7 @@
             this.panel1.Size = new System.Drawing.Size(405, 307);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // pay_button
-            // 
-            this.pay_button.Location = new System.Drawing.Point(-1, 254);
-            this.pay_button.Name = "pay_button";
-            this.pay_button.Size = new System.Drawing.Size(122, 54);
-            this.pay_button.TabIndex = 11;
-            this.pay_button.Text = "充值";
-            this.pay_button.UseVisualStyleBackColor = true;
-            this.pay_button.Click += new System.EventHandler(this.pay_button_Click);
-            // 
-            // label_text
-            // 
-            this.label_text.AutoSize = true;
-            this.label_text.Font = new System.Drawing.Font("华文彩云", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_text.Location = new System.Drawing.Point(6, 39);
-            this.label_text.Name = "label_text";
-            this.label_text.Size = new System.Drawing.Size(399, 73);
-            this.label_text.TabIndex = 0;
-            this.label_text.Text = "您的钱包 ：";
-            // 
-            // label_money
-            // 
-            this.label_money.AutoSize = true;
-            this.label_money.Font = new System.Drawing.Font("华文彩云", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_money.Location = new System.Drawing.Point(26, 137);
-            this.label_money.Name = "label_money";
-            this.label_money.Size = new System.Drawing.Size(159, 73);
-            this.label_money.TabIndex = 1;
-            this.label_money.Text = " 0元";
-            this.label_money.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_Paint);
             // 
             // button_fresh
             // 
@@ -188,21 +136,72 @@
             this.button_fresh.UseVisualStyleBackColor = false;
             this.button_fresh.Click += new System.EventHandler(this.button_fresh_Click);
             // 
+            // label_money
+            // 
+            this.label_money.AutoSize = true;
+            this.label_money.Font = new System.Drawing.Font("华文彩云", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_money.Location = new System.Drawing.Point(26, 137);
+            this.label_money.Name = "label_money";
+            this.label_money.Size = new System.Drawing.Size(159, 73);
+            this.label_money.TabIndex = 1;
+            this.label_money.Text = " 0元";
+            this.label_money.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_text
+            // 
+            this.label_text.AutoSize = true;
+            this.label_text.Font = new System.Drawing.Font("华文彩云", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_text.Location = new System.Drawing.Point(6, 39);
+            this.label_text.Name = "label_text";
+            this.label_text.Size = new System.Drawing.Size(399, 73);
+            this.label_text.TabIndex = 0;
+            this.label_text.Text = "您的钱包 ：";
+            // 
+            // pay_button
+            // 
+            this.pay_button.Location = new System.Drawing.Point(146, 178);
+            this.pay_button.Name = "pay_button";
+            this.pay_button.Size = new System.Drawing.Size(122, 54);
+            this.pay_button.TabIndex = 11;
+            this.pay_button.Text = "充值";
+            this.pay_button.UseVisualStyleBackColor = true;
+            this.pay_button.Click += new System.EventHandler(this.pay_button_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(146, 252);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(122, 57);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "退订";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(-1, 91);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(121, 51);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "修改个人信息";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 410);
+            this.ClientSize = new System.Drawing.Size(706, 395);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.pay_button);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.vip_button);
-            this.Controls.Add(this.button6);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserForm";
             this.Text = "用户程序";
@@ -217,9 +216,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button vip_button;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel1;
@@ -227,6 +224,8 @@
         private System.Windows.Forms.Label label_money;
         private System.Windows.Forms.Label label_text;
         private System.Windows.Forms.Button button_fresh;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 

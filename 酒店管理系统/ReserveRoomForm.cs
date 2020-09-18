@@ -24,23 +24,22 @@ namespace WindowsFormsApp1
                 MessageBox.Show("请选择有效房间种类");
                 return;
             }
-            int beg_time = -1;
-            int end_time = -1;
-            int.TryParse(textBox2.Text, out beg_time);
-            int.TryParse(textBox3.Text, out end_time);
-            if(beg_time == -1 || end_time == -1)
+            DateTime beg_time = dtpStartime.Value;
+            DateTime end_time = dtpEndtime.Value;
+            if((DateTime.Compare(dtpStartime.Value, dtpEndtime.Value) < 1 ))
             {
-                MessageBox.Show("请输入有效时间");
-                return;
-            }
-            else
-            {
-                if (User.OrderRoom(comboBox1.SelectedIndex, beg_time, end_time) == 0)
+                if (User.OrderRoom(comboBox1.Text, beg_time, end_time).Length == 1)
                 {
                     MessageBox.Show("预定失败。。。");
                 }
                 else
                     MessageBox.Show("预定成功！");
+            }
+            else
+            {
+                
+                MessageBox.Show("请输入有效时间（起止时间不能同一天）");
+                return;
             }
         }
     }

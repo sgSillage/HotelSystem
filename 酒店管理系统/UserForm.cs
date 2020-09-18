@@ -24,16 +24,6 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            /*if (User.CheckVip(User.id)==0)
-            {
-                MessageBox.Show("您不是会员！", "错误");
-            }
-            else
-            {
-                VIPForm VipForm = new VIPForm();//这两段代码可以生成一个新窗口
-                VipForm.Show();                 //
-            }*/
             User.viplevel = User.CheckVip(User.id);
             VIPForm VipForm = new VIPForm();//这两段代码可以生成一个新窗口
             VipForm.Show();                 //
@@ -53,12 +43,14 @@ namespace WindowsFormsApp1
 
         private void SearchRecordClicked(object sender, EventArgs e)
         {
-            User.SearchRecord();
+            UserOrderForm NForm = new UserOrderForm();
+            NForm.Show();
+            //User.SearchOrder(User.id.ToString());
         }
 
         private void SearchOrderClicked(object sender, EventArgs e)
         {
-            User.SearchOrder(User.id);
+            User.SearchOrder(User.id.ToString());
         }
 
         private void CheckOutClicked(object sender, EventArgs e)
@@ -83,15 +75,33 @@ namespace WindowsFormsApp1
             PayForm pForm = new PayForm();//这两段代码可以生成一个新窗口
             pForm.Show();
         }
+        private void button_fresh_Click(object sender, EventArgs e)
+        {
+            this.label_money.Text = User.searchWallet(User.id).ToString() + "元";
+        }
+
+        private void panel1_Paint(object sender, MouseEventArgs e)
+        {
+            this.label_money.Text = User.searchWallet(User.id).ToString() + "元";
+        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             this.label_money.Text = User.searchWallet(User.id).ToString() + "元";
         }
 
-        private void button_fresh_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
-            this.label_money.Text = User.searchWallet(User.id).ToString() + "元";
+            cancelOrderForm cancelOrderForm = new cancelOrderForm();
+            cancelOrderForm.Show();
+            //this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            informationForm NFform = new informationForm();
+            User.getInformation();
+            NFform.Show();
         }
     }
 }

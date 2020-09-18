@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
         private void show()
         {
             label2.Text = "您是VIP   " + User.viplevel + "   级会员";
-            textBox_thegood.Text = User.PrivilegeForLevel(User.id);
+            label_priviliage.Text = User.PrivilegeForUser(User.id.ToString());
         }
     }
 }

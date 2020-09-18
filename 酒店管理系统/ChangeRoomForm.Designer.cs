@@ -92,7 +92,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "更换";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.ChangeRoomClicked);
+            //this.button1.Click += new System.EventHandler(this.ChangeRoomClicked);
             // 
             // comboBox1
             // 

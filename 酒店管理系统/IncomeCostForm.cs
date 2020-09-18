@@ -63,5 +63,6 @@ namespace HotelmanageSystem
                 MessageBox.Show("起始日期晚于结束日期！", "出错提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
     }
 }

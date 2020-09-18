@@ -17,15 +17,15 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void ChangeRoomClicked(object sender, EventArgs e)
+        /*private void ChangeRoomClicked(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("请选择有效房间种类");
                 return;
             }
-            int beg_time = -1;
-            int end_time = -1;
+            DateTime beg_time = ;
+            DateTime end_time = -1;
             int.TryParse(textBox2.Text, out beg_time);
             int.TryParse(textBox3.Text, out end_time);
             if (beg_time == -1 || end_time == -1)
@@ -35,9 +35,9 @@ namespace WindowsFormsApp1
             }
             else
             {
-                User.ChangeRoom(comboBox1.SelectedIndex, beg_time, end_time);
+                User.ChangeRoom(comboBox1.Text, beg_time, end_time);
             }
-        }
+        }*/
 
         private void ChangeRoomForm_Load(object sender, EventArgs e)
         {

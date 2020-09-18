@@ -92,5 +92,10 @@ namespace WindowsFormsApp1
                 listView1.Items.Add(a);
             }
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

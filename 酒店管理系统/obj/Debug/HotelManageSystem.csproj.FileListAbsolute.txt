@@ -335,3 +335,7 @@ C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\bin\Debug\Syst
 C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\obj\Debug\HotelManageSystem.csproj.CopyComplete
 C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\obj\Debug\酒店管理系统.PayForm.resources
+C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\obj\Debug\WindowsFormsApp1.cancelOrderForm.resources
+C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\obj\Debug\酒店管理系统.UserOrderForm.resources
+C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\obj\Debug\酒店管理系统.changPasswordForm.resources
+C:\Users\shinalon\Documents\GitHub\HotelSystem\酒店管理系统\obj\Debug\酒店管理系统.informationForm.resources
