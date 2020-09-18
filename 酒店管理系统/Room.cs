@@ -20,6 +20,13 @@ namespace HotelmanageSystem
             this.isNormal = isNor;
             this.price = pri;
         }
+        public Room(string num, string knd, string isNor)
+        {
+            this.number = num;
+            this.kind = knd;
+            this.isNormal = isNor;
+            this.price = 0;
+        }
         public string Number
         {
             get { return number; }

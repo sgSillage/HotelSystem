@@ -345,3 +345,4 @@ C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\酒店管理�
 C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\酒店管理系统.informationForm.resources
 C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\酒店管理系统.UserOrderForm.resources
 C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\酒店管理系统.PayForm.resources
+C:\Users\Sillage\Desktop\HotelSystem\酒店管理系统\obj\Debug\ReceptionSection.CheckInTimeForm.resources
