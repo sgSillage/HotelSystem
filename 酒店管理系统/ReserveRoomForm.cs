@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
             }
             DateTime beg_time = dtpStartime.Value;
             DateTime end_time = dtpEndtime.Value;
-            if((DateTime.Compare(dtpStartime.Value, dtpEndtime.Value) < 1 ))
+            if((dtpStartime.Value.CompareTo(dtpEndtime.Value)<0 ))
             {
                 if (User.OrderRoom(comboBox1.Text, beg_time, end_time).Length == 1)
                 {
@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
             else
             {
                 
-                MessageBox.Show("请输入有效时间（起止时间不能同一天）");
+                MessageBox.Show("请输入有效时间（结束时间必须晚于开始时间）！");
                 return;
             }
         }

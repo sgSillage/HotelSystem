@@ -11,7 +11,7 @@ namespace WindowsFormsApp1
 {
     static class User//此处使用了类的静态成员来使得其他页面得以使用User的属性
     {
-        public static int id = 110;
+        public static string id = "19946254560";
         public static string name = "张三";
         public static string gender;
         public static string phone;
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
                Identity = value;
             }
         }*/
-        private const String connStr = "server=localhost;database=mydb;uid=root;pwd=123;Allow User Variables=True";
+        private const String connStr = "server=localhost;database=mydb;uid=root;pwd=nmb15963.;Allow User Variables=True";
         public static void GetReserve(int user_id, int room_id, int beg_time, int end_time) //在reserve表里插入user_id,room_id,beg_time,end_time
         {
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -145,7 +145,7 @@ namespace WindowsFormsApp1
             conn.Close();
         }
 
-        public static int CheckVip(int uid)
+        public static int CheckVip(string uid)
         {
             int VIPclass = 0;
 
@@ -169,7 +169,7 @@ namespace WindowsFormsApp1
             //***
             //在membership表里查是否有user_id=uid项，有则返回class值，无则返回0
         }
-        public static void GetVip(int level, int uid)
+        public static void GetVip(int level, string uid)
         {
             //***
             //在membership表里插入level，uid
@@ -211,7 +211,7 @@ namespace WindowsFormsApp1
             User.viplevel = CheckVip(User.id);
             return;
         }
-        public static void CancleVip(int uid)
+        public static void CancleVip(string uid)
         {
             //***
             //在membership表里插入删除user_id=uid的项
@@ -238,42 +238,32 @@ namespace WindowsFormsApp1
             //找到返回房间号，找不到则返回0
             string room_id = "#";
             MySqlConnection conn = new MySqlConnection();
-            try
+            conn.ConnectionString = connStr;
+            conn.Open();
+            state = conn.State.ToString();//保存状态信息
+            using (MySqlCommand cmd = new MySqlCommand())//新建一个SQL执行对象
             {
-                conn.ConnectionString = connStr;
-                conn.Open();
-                state = conn.State.ToString();//保存状态信息
-                MySqlCommand cmd = new MySqlCommand();//新建一个SQL执行对象
                 cmd.Connection = conn;
-                cmd.CommandText = "select room_id from room natural left join reserve where type =@type and status=@state" +
-                    " and (start_time is null or ( @end_time  <= start_time or @beg_time >= final_time))";
+                cmd.CommandText = "select room_id from room natural left join mydb.reserve where type =@type and status=1" +
+                    " and (start_time is null or ( @end_time  < start_time or @beg_time > final_time))";
                 cmd.Parameters.Add(new MySqlParameter("@type", type));
-                cmd.Parameters.Add(new MySqlParameter("@state", "1"));
-                cmd.Parameters.Add(new MySqlParameter("@end_time", end_time.ToShortDateString()));
-                //MessageBox.Show(end_time.ToLongDateString());
-                cmd.Parameters.Add(new MySqlParameter("@start_time", beg_time.ToShortDateString()));
-                //MessageBox.Show(beg_time.ToLongDateString());
+                cmd.Parameters.Add(new MySqlParameter("@end_time", end_time.ToString()));
+                MessageBox.Show(type+" "+end_time.ToString());
+                cmd.Parameters.Add(new MySqlParameter("@start_time", beg_time.ToString()));
+                MessageBox.Show(beg_time.ToShortDateString());
 
                 MySqlDataReader ord = cmd.ExecuteReader(); //执行查询操作
-               if (ord.Read())
+                if (ord.Read())
                 {
                     room_id = ord.GetString("room_id");
                 }
 
             }
-            catch (Exception ex)
-            {
-                exMessage = ex.Message.ToString();
-                MessageBox.Show(exMessage);
-            }
-            finally
-            {
-                conn.Close();
-            }
+            conn.Close();
             MessageBox.Show(room_id.ToString());
             return room_id;
         }
-        public static int SearchUserRoom(int uID)//查询ID为uID的用户目前的住房,并返回房间号
+        public static int SearchUserRoom(string uID)//查询ID为uID的用户目前的住房,并返回房间号
         {
             int room_id2 = 0;
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -285,7 +275,7 @@ namespace WindowsFormsApp1
                 cmd.CommandText = sql;
                 MySqlDataReader reader = cmd.ExecuteReader();//创建一个执行读命令的对象,但是还没有执行命令
                 string room_id1 = "";
-                while (reader.Read())//按行执行查询，每次循环查询一行
+                if(reader.Read())//按行执行查询，每次循环查询一行
                 {
                     room_id1 = reader.GetString("room_id");
                     room_id2 = int.Parse(room_id1);//转换为int
@@ -294,7 +284,7 @@ namespace WindowsFormsApp1
             conn.Close();
             return room_id2;
         }
-        public static string AppforSev(int uid, string type)//申请服务                
+        public static string AppforSev(string uid, string type)//申请服务                
         {
             //***
             //在ser_order表中插入一列新数据，参见参数列表，ser_order_id自动增加，时间使用系统时间//ser_id自动添加需要建立个类，
@@ -408,7 +398,7 @@ namespace WindowsFormsApp1
             room_id = CheckOrder(type, beg_time, end_time);
             if (room_id.Length > 1)
             {
-                insertReserve(id.ToString(),room_id,beg_time.ToShortDateString(),end_time.ToShortDateString());
+                insertReserve(id.ToString(),room_id,beg_time.ToLongDateString(),end_time.ToLongDateString());
                 //MessageBox.Show(room_id);
             }
             return room_id;
@@ -505,7 +495,7 @@ namespace WindowsFormsApp1
             
             return userOrders;
         }
-        public static void Comment(DateTime time, int user_id, string s, int star)//评论
+        public static void Comment(DateTime time, string user_id, string s, int star)//评论
         {
             ////向evaluate表中插入信息,见参数列表
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -564,7 +554,7 @@ namespace WindowsFormsApp1
             }
             
         }
-        public static void updateWallet(int money, int uid)
+        public static void updateWallet(int money, string uid)
         {
             int record;
             using (MySqlConnection conn = new MySqlConnection(connStr))
@@ -581,7 +571,7 @@ namespace WindowsFormsApp1
                 conn.Close();
             }
         }
-        public static int searchWallet(int uid)
+        public static int searchWallet(string uid)
         {
             int price = -1;
             MySqlConnection conn = new MySqlConnection();
@@ -688,15 +678,18 @@ namespace WindowsFormsApp1
                 using (MySqlCommand UserInfo = new MySqlCommand(Query, conn))
                 {
                     MySqlDataReader reader = UserInfo.ExecuteReader();
-                    reader.Read();
-                    name = reader.GetString("name");
-                    gender = reader.GetUInt16("gender") == 1 ? "男" : "女";
-                    phone = reader.GetString("phone");
-                    identity = reader.GetString("identity");
+                    if (reader.Read())
+                    {
+                        name = reader.GetString("name");
+                        gender = reader.GetUInt16("gender") == 1 ? "男" : "女";
+                        phone = reader.GetString("phone");
+                        identity = reader.GetString("identity");
+                    }
+                   
                 }
                 conn.Close();
             }
-            int.TryParse(ID, out id);
+            id = ID;
         }
         static void insertReserve(string user_id, string room_id, string start_time, string final_time)
         {

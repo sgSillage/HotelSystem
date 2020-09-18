@@ -97,6 +97,12 @@
     <Compile Include="CheckInRecordForm.Designer.cs">
       <DependentUpon>CheckInRecordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckInTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckInTimeForm.designer.cs">
+      <DependentUpon>CheckInTimeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CheckInRecordForm.resx">
       <DependentUpon>CheckInRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckInTimeForm.resx">
+      <DependentUpon>CheckInTimeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CommentForm.resx">
       <DependentUpon>CommentForm.cs</DependentUpon>
