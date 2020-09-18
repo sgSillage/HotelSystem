@@ -268,7 +268,7 @@ namespace LoginRegisterFrame
                 }
                 else if (comboBoxCatagory.Text == "顾客")
                 {
-                    WindowsFormsApp1.User.setPersonalInfo(WindowsFormsApp1.User.id.ToString());
+                    //WindowsFormsApp1.User.setPersonalInfo(WindowsFormsApp1.User.id.ToString());
                     UserForm userForm = new UserForm();
                     userForm.Owner = this;
                     this.Hide();
