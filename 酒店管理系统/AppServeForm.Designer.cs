@@ -41,9 +41,10 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button_flash = new System.Windows.Forms.Button();
+            this.button_newService = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.complaintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -98,13 +99,13 @@
             this.columnHeader2,
             this.columnHeader3});
             this.listView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Location = new System.Drawing.Point(0, 42);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(525, 353);
+            this.listView1.Size = new System.Drawing.Size(581, 303);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -114,48 +115,59 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "服务类型";
-            this.columnHeader1.Width = 101;
+            this.columnHeader1.Width = 136;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "申请时间";
-            this.columnHeader2.Width = 165;
+            this.columnHeader2.Width = 175;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "服务订单编号";
-            this.columnHeader3.Width = 184;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(154, 28);
-            // 
-            // ToolStripMenuItem
-            // 
-            this.ToolStripMenuItem.Name = "ToolStripMenuItem";
-            this.ToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
-            this.ToolStripMenuItem.Text = "申请新服务";
-            this.ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
+            this.columnHeader3.Width = 268;
             // 
             // button_flash
             // 
-            this.button_flash.Location = new System.Drawing.Point(469, 0);
+            this.button_flash.Location = new System.Drawing.Point(503, 2);
             this.button_flash.Name = "button_flash";
-            this.button_flash.Size = new System.Drawing.Size(56, 24);
+            this.button_flash.Size = new System.Drawing.Size(78, 43);
             this.button_flash.TabIndex = 8;
             this.button_flash.Text = "刷新";
             this.button_flash.UseVisualStyleBackColor = true;
             this.button_flash.Click += new System.EventHandler(this.userSerReload);
             // 
+            // button_newService
+            // 
+            this.button_newService.Location = new System.Drawing.Point(201, 2);
+            this.button_newService.Name = "button_newService";
+            this.button_newService.Size = new System.Drawing.Size(105, 43);
+            this.button_newService.TabIndex = 9;
+            this.button_newService.Text = "申请新服务";
+            this.button_newService.UseVisualStyleBackColor = true;
+            this.button_newService.Click += new System.EventHandler(this.button_newService_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.complaintToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(109, 28);
+            // 
+            // complaintToolStripMenuItem
+            // 
+            this.complaintToolStripMenuItem.Name = "complaintToolStripMenuItem";
+            this.complaintToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.complaintToolStripMenuItem.Text = "投诉";
+            this.complaintToolStripMenuItem.Click += new System.EventHandler(this.complaintToolStripMenuItem_Click);
+            // 
             // AppServeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 353);
+            this.ClientSize = new System.Drawing.Size(593, 347);
+            this.Controls.Add(this.button_newService);
             this.Controls.Add(this.button_flash);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.panel1);
@@ -176,9 +188,10 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem;
         private System.Windows.Forms.Button button_flash;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Button button_newService;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem complaintToolStripMenuItem;
     }
 }
