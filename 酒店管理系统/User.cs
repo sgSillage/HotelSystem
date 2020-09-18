@@ -451,8 +451,6 @@ namespace WindowsFormsApp1
         }
         public static void Comment(DateTime time, int user_id, string s, int star)//评论
         {
-            //***
-
             ////向evaluate表中插入信息,见参数列表
             MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
